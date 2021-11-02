@@ -7,8 +7,8 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MaxMarketing - Register Account</title>
-    <meta name="description" content="Arion — This is the best dashboard" />
+    <title>Medics et al</title>
+    <meta name="description" content="Medics et al" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="Arion — This is the best dashboard" />
@@ -47,7 +47,7 @@
 
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important;"
-    class="root-svg-symbols-element">
+        class="root-svg-symbols-element">
         <symbol id="icon-action" viewBox="0 0 22 22">
             <path d="M14.2 6.6H6.2V5L3 7.8L6.2 10.6V9H14.2V6.6ZM19 13.4L15.8 10.6V12.2H7.8V14.6H15.8V16.2L19 13.4Z" />
         </symbol>
@@ -439,8 +439,8 @@
                     <div class="page-auth__gradient-shape"></div>
                     <div class="page-auth__gradient-shape"></div>
                     <div class="auth-logo">
-                        <img class="auth-logo__icon" src="/assets/img/content/logotype.svg" width="44" alt="#" />
-                        <div class="auth-logo__text">MaxMarketing</div>
+                        {{-- <img class="auth-logo__icon" src="/assets/img/content/logotype.svg" width="44" alt="#" /> --}}
+                        <div class="auth-logo__text">Medics et al</div>
                     </div>
                     <div class="page-auth__gradient-column"></div>
                 </div>
@@ -451,8 +451,8 @@
                         <div class="auth-card__left">
                             <div class="auth-card__logo">
                                 <div class="auth-logo">
-                                    <img class="auth-logo__icon" src="/assets/img/content/logotype.svg" width="44" alt="#" />
-                                    <div class="auth-logo__text">MaxMarketing</div>
+                                    {{-- <img class="auth-logo__icon" src="/assets/img/content/logotype.svg" width="44" alt="#" /> --}}
+                                    <div class="auth-logo__text">Medics et al</div>
                                 </div>
                             </div>
                             <img class="auth-card__bg auth-bg-image-light" src="/assets/img/content/auth-bg.jpg" alt="#">
