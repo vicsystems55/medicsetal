@@ -36,6 +36,8 @@ Route::get('/choose', [ChooseRoleController::class, 'choose'])->name('choose');
 
 Route::get('/adminx', [HomeController::class, 'admin'])->name('admin');
 
+Route::get('/coming_soon', [HomeController::class, 'coming_soon'])->name('comming_soon');
+
 
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(){
 

@@ -40,7 +40,7 @@
                             </li> -->
                 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
@@ -51,7 +51,7 @@
                 </li>
 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
@@ -62,7 +62,7 @@
                 </li>
 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
@@ -74,7 +74,7 @@
 
                 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
@@ -86,7 +86,7 @@
 
                 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
@@ -98,7 +98,7 @@
 
                 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
@@ -109,7 +109,7 @@
                 </li>
 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
@@ -120,7 +120,7 @@
                 </li>
 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
@@ -131,7 +131,7 @@
                 </li>
 
                 <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="ui-kit.html" aria-expanded="false">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
                             <svg class="icon-icon-settings">
                                 <use xlink:href="#icon-settings"></use>
