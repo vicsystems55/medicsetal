@@ -493,6 +493,20 @@
                                 </span>
                             @enderror                                    </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="input-group input-group--prepend"><span class="input-group__prepend">
+                        <svg class="icon-icon-email-2">
+                          <use xlink:href="#icon-email-2"></use>
+                        </svg></span>
+                            <input id="referral_code" type="text" class="form-control input @error('referral_code') is-invalid @enderror" name="referral_code" placeholder="Referral Code" value="{{ old('referral_code') }}"  autocomplete="referral_code">
+
+                            @error('referral_code')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <div class="input-group input-group--prepend"><span class="input-group__prepend">
                         <svg class="icon-icon-password">

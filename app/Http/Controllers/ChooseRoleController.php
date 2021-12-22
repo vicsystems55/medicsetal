@@ -14,11 +14,18 @@ class ChooseRoleController extends Controller
             if(Auth::user()->role == 'admin'){
 
                 return redirect('/admin');
+
+            }elseif(Auth::user()->role == 'user'){
+
+                return redirect('/user');
+                
             }else{
 
                 abort(403);
             }
+
         }else{
+
             return redirect('/login');
         }
     }

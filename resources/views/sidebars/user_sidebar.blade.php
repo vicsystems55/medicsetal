@@ -46,7 +46,7 @@
                                 <use xlink:href="#icon-settings"></use>
                             </svg>
                         </span>
-                        <span class="sidebar__link-text">Members</span>
+                        <span class="sidebar__link-text">Messages</span>
                     </a>
                 </li>
 
@@ -57,7 +57,7 @@
                                 <use xlink:href="#icon-settings"></use>
                             </svg>
                         </span>
-                        <span class="sidebar__link-text">Packages</span>
+                        <span class="sidebar__link-text">Landing Page</span>
                     </a>
                 </li>
 
@@ -68,7 +68,7 @@
                                 <use xlink:href="#icon-settings"></use>
                             </svg>
                         </span>
-                        <span class="sidebar__link-text">Subscriptions</span>
+                        <span class="sidebar__link-text">Leads</span>
                     </a>
                 </li>
 
@@ -80,7 +80,7 @@
                                 <use xlink:href="#icon-settings"></use>
                             </svg>
                         </span>
-                        <span class="sidebar__link-text">Payouts</span>
+                        <span class="sidebar__link-text">Wallet</span>
                     </a>
                 </li>
 
@@ -92,11 +92,23 @@
                                 <use xlink:href="#icon-settings"></use>
                             </svg>
                         </span>
-                        <span class="sidebar__link-text">Leeds</span>
+                        <span class="sidebar__link-text">Notifications</span>
                     </a>
                 </li>
 
                 
+                <li class="sidebar__menu-item">
+                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
+                        <span class="sidebar__link-icon">
+                            <svg class="icon-icon-settings">
+                                <use xlink:href="#icon-settings"></use>
+                            </svg>
+                        </span>
+                        <span class="sidebar__link-text">Profile</span>
+                    </a>
+                </li>
+
+
                 <li class="sidebar__menu-item">
                     <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
                         <span class="sidebar__link-icon">
@@ -115,29 +127,7 @@
                                 <use xlink:href="#icon-settings"></use>
                             </svg>
                         </span>
-                        <span class="sidebar__link-text">Notifications</span>
-                    </a>
-                </li>
-
-                <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
-                        <span class="sidebar__link-icon">
-                            <svg class="icon-icon-settings">
-                                <use xlink:href="#icon-settings"></use>
-                            </svg>
-                        </span>
-                        <span class="sidebar__link-text">Messages</span>
-                    </a>
-                </li>
-
-                <li class="sidebar__menu-item">
-                    <a class="sidebar__link" href="{{route('comming_soon')}}" aria-expanded="false">
-                        <span class="sidebar__link-icon">
-                            <svg class="icon-icon-settings">
-                                <use xlink:href="#icon-settings"></use>
-                            </svg>
-                        </span>
-                        <span class="sidebar__link-text">Settings</span>
+                        <span class="sidebar__link-text">My Subscription</span>
                     </a>
                 </li>
 
