@@ -1,13 +1,13 @@
 @component('mail::message')
 
-<h3> Hello {{$data['name']}}, </h3>
+<h1> Hello {{$data['name']}}, </h1>
 
 <p>
     Welcome to Phoenixgn, use the OTP below to verify your email.
 </p>
   
     
-<h3> {{$data['otp']}} </h3>
+<h1> {{$data['otp']}} </h1>
 
 <p>
     If you have any complaints please contact our support.
