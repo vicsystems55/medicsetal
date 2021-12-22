@@ -8,6 +8,8 @@ use App\Http\Controllers\UserPageController;
 
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\LandingPageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,11 @@ Route::get('/choose', [ChooseRoleController::class, 'choose'])->name('choose');
 Route::get('/adminx', [HomeController::class, 'admin'])->name('admin');
 
 Route::get('/coming_soon', [HomeController::class, 'coming_soon'])->name('comming_soon');
+
+
+Route::get('/{username}', [LandingPageController::class, 'index'])->name('landing_page');
+
+
 
 
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(){
