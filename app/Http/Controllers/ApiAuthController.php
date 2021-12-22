@@ -44,8 +44,14 @@ class ApiAuthController extends Controller
             'password' => 'required|string|min:8',
             ]);
 
+            // if ($validatedData->errors()) {
+            //     # code...
 
-            $regCode = "PGN" .rand(11100,999999);
+            //     return $validatedData;
+            // }
+
+
+            $regCode = "MED" .rand(11100,999999);
                 
             $user = User::create([
                 'name' => $validatedData['name'],
