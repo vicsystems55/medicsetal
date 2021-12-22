@@ -31,7 +31,7 @@ class ApiAuthController extends Controller
     public function register(Request $request)
     {
 
-        return 123;
+        // return 123;
 
         try {
             //code...
