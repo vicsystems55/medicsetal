@@ -445,7 +445,7 @@
                 </div>
             </div>
             <div class="row align-items-center">
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <div class="price-save-box bg-primary p-4 mt-5 border-radius">
                         <h2 class="text-white">Save your <br> <span class="fw-bold text-light">money now</span></h2>
                         <p class="mt-3 text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -456,9 +456,32 @@
                             <img src="{{asset('landingpage1')}}/images/pricing/investment.png" alt="">
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="col-lg-4  mt-5">
+                <div class="col-lg-3 col-md-6  mt-5">
+                    <div class="pricing-box box-shadow p-4 border-radius">
+                        <div class="text-center mb-4">
+                            <h6 class="text-primary">Gold</h6>
+                            <div class="price-title mt-2">
+                                <div class="tag"></div>
+                                <h6 class="mb-0 text-white">basic</h6>
+                            </div>
+                            <div class="price-tag mt-4">
+                                <h2><sup>$</sup><span class="text-primary">0</span></h2>
+                            </div>
+                            <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
+
+                            <div class="detail mt-4">
+                                <p><span class="text-primary icon me-2">∎</span>10 GB Disk Space</p>
+                                <p><span class="text-primary icon me-2">∎</span>1 Year Technical Support</p>
+                                <p><span class="text-primary icon me-2">∎</span>SQL Database</p>
+                            </div>
+
+                        </div>
+                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  mt-5">
                     <div class="pricing-box box-shadow p-4 border-radius">
                         <div class="text-center mb-4">
                             <h6 class="text-primary">Wealth</h6>
@@ -478,35 +501,59 @@
                             </div>
 
                         </div>
-                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Get
-                            started</button>
+                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
                     </div>
                 </div>
-
-                <div class="col-lg-4  mt-5">
+                <div class="col-lg-3 col-md-6  mt-5">
                     <div class="pricing-box box-shadow p-4 border-radius">
                         <div class="text-center mb-4">
-                            <h6 class="text-primary">Combination</h6>
+                            <h6 class="text-primary">Wealth</h6>
                             <div class="price-title mt-2">
                                 <div class="tag"></div>
-                                <h6 class="mb-0 text-white">Premium</h6>
+                                <h6 class="mb-0 text-white">basic</h6>
                             </div>
                             <div class="price-tag mt-4">
-                                <h2><sup>$</sup><span class="text-primary">99</span></h2>
+                                <h2><sup>$</sup><span class="text-primary">0</span></h2>
                             </div>
                             <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
 
                             <div class="detail mt-4">
-                                <p><span class="text-primary icon me-2">∎</span>100 GB Disk Space</p>
-                                <p><span class="text-primary icon me-2">∎</span>5 Year Technical Support</p>
+                                <p><span class="text-primary icon me-2">∎</span>10 GB Disk Space</p>
+                                <p><span class="text-primary icon me-2">∎</span>1 Year Technical Support</p>
                                 <p><span class="text-primary icon me-2">∎</span>SQL Database</p>
                             </div>
 
                         </div>
-                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign
-                            up</button>
+                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6  mt-5">
+                    <div class="pricing-box box-shadow p-4 border-radius">
+                        <div class="text-center mb-4">
+                            <h6 class="text-primary">Wealth</h6>
+                            <div class="price-title mt-2">
+                                <div class="tag"></div>
+                                <h6 class="mb-0 text-white">basic</h6>
+                            </div>
+                            <div class="price-tag mt-4">
+                                <h2><sup>$</sup><span class="text-primary">0</span></h2>
+                            </div>
+                            <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
+
+                            <div class="detail mt-4">
+                                <p><span class="text-primary icon me-2">∎</span>10 GB Disk Space</p>
+                                <p><span class="text-primary icon me-2">∎</span>1 Year Technical Support</p>
+                                <p><span class="text-primary icon me-2">∎</span>SQL Database</p>
+                            </div>
+
+                        </div>
+                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
+                    </div>
+                </div>
+
+           
+
+
             </div>
         </div>
     </section>

@@ -107,13 +107,21 @@ class ApiAuthController extends Controller
         // try {
             //code...
 
-            Mail::to($user->email)
-            ->send(new Welcome($datax));
+            try {
+                //code...
+                Mail::to($user->email)
+                ->send(new Welcome($datax));
+    
+    
+    
+                Mail::to($user->email)
+                ->send(new EmailVerification($datax));
 
+            } catch (\Throwable $th) {
+                //throw $th;
 
-
-            Mail::to($user->email)
-            ->send(new EmailVerification($datax));
+                
+            }
 
 
 
