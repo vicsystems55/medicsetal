@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="title mt-5 mt-lg-0">
-                            Get Your Professional Website Done With
+                            Hello, Im Sylvia
                         </h2>
                         <p class="f-16 my-4 text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                             Numquam soluta eius illo, recusandae tenetur saepe, eaque voluptate.</p>
@@ -38,7 +38,7 @@
 
 
     <!-- client section -->
-    <section class="section pt-0 clients">
+    <section class="section pt-0 clients d-none">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -84,7 +84,7 @@
 
 
     <!-- start service -->
-    <section class="section bg-light" id="service">
+    <section class="section bg-light d-none" id="service d-none">
         <div class="container">
             <div class="row justify-content-center mb-4 pb-2">
                 <div class="col-lg-6">
@@ -617,7 +617,7 @@
 
 
     <!-- start blog -->
-    <section class="section bg-light" id="blog">
+    <section class="section bg-light d-none" id="blog">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">

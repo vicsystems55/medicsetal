@@ -31,7 +31,7 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar-navlist" data-bs-offset="71">
 
     <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+    {{-- <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
         <div class="container-fluid custom-container">
             <a class="navbar-brand logo text-uppercase" href="index.html">
                 <img src="images/logo-dark.png" class="logo-light" alt="" height="32">
@@ -96,11 +96,11 @@
             <!--end header-menu-->
         </div>
         <!--end container-->
-    </nav>
+    </nav> --}}
     <!-- Navbar End -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -157,7 +157,7 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- end modal -->
 
 
