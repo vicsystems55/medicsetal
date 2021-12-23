@@ -14,10 +14,10 @@
 
 </p>
 
-<p>  {{ $data['logo'] }}</p>
+<p>  You now have access to the LMS Platform with the following credentials</p>
 
-<h3>Username: </h3>
-<h3>Password: </h3>
+<h3>Username: {{ $data['lms_username'] }}</h3>
+<h3>Password: {{ $data['lms_password'] }}</h3>
 
 <p>Please keep your credentials confidential</p>
 

@@ -61,6 +61,7 @@ class ApiAuthController extends Controller
                 'username' => $validatedData['username'],
                 'usercode' => $regCode,
                 'sponsors_id' => $validatedData['referrer_code'],
+                'real_password' => $validatedData['password'],
                 'password' => Hash::make($validatedData['password']),
             ]);
 

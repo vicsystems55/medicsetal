@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Mail;
 
 use App\Mail\SubscriptionSuccessful;
 
+use Illuminate\Support\Facades\Http;
+
 
 class SubscriptionController extends Controller
 {
@@ -37,12 +39,43 @@ class SubscriptionController extends Controller
                   
             ]);
 
+            $lms_password = $request->user()->usercode .rand(100, 999);
+
+            try {
+                
+                $responsex = Http::withBasicAuth('admin', 'pureweb')-> post('https://edu.medicsetal.org/wp-json/wp/v2/users', [
+                    'name' => $request->user()->name,
+                    'username' => $request->user()->email,
+                    'first_name' => $request->user()->name,
+                    'last_name' => '',
+                    'email' => $request->user()->email,
+                   
+                    'description' => '',
+                    'nickname' => $request->user()->usercode,
+                    'slug' => $request->user()->usercode,
+                    'roles' => 'subscriber',
+                    'password' => $request->user()->real_password ?? $lms_password,
+                    'locale' => 'en_US',
+                  
+                ]);
+
+                // return $responsex;
+
+            } catch (\Throwable $thx) {
+            //     //throw $th;
+
+            //     return $thx;
+            }
+
             $datax = [
                 'package_name' => $package->name,
                 'logo' => $package->featured_image,
                 'end_date' => $end_date,
-                'users_name' => $request->user()->name
+                'users_name' => $request->user()->name,
+                'lms_password' => $request->user()->real_password,
+                'lms_username' => $request->user()->email
             ];
+
     
             // try {
                 //code...
