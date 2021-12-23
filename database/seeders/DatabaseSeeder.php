@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserTableSeeder::class,
-            // PhoenixgnPackagesSeeder::class,
+            PackagesTableSeeder::class,
             // FAQSeeder::class,
             ]);
     }

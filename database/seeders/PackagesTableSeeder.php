@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use DB;
+
 class PackagesTableSeeder extends Seeder
 {
     /**
@@ -15,38 +17,42 @@ class PackagesTableSeeder extends Seeder
     {
         //
 
-        DB::table('users')->insertOrIgnore([
+        DB::table('packages')->insertOrIgnore([
 
             [
-                'name' => 'Medics Package 1',
+                'name' => 'Bronze',
+                'fee' => '25000',
                 'description' => 'Medics Package 1',
-                'duration' => '0',
+                'duration' => '1',
                 'status' => 'active',
-                'featured_image' => 'package1.png',
+                'featured_image' => 'https://app.medicsetal.org/packages/bronze.png',
             ],
 
             [
-                'name' => 'Medics Package 2',
+                'name' => 'Silver',
+                'fee' => '70000',
                 'description' => 'Medics Package 2',
                 'duration' => '3',
                 'status' => 'active',
-                'featured_image' => 'package2.png',
+                'featured_image' => 'https://app.medicsetal.org/packages/silver.png',
             ],
 
             [
-                'name' => 'Medics Package 3',
+                'name' => 'Gold',
+                'fee' => '135000',
                 'description' => 'Medics Package 3',
                 'duration' => '6',
                 'status' => 'active',
-                'featured_image' => 'package3.png',
+                'featured_image' => 'https://app.medicsetal.org/packages/gold.png',
             ],
 
             [
-                'name' => 'Medics Package 4',
+                'name' => 'Diamond',
+                'fee' => '135000',
                 'description' => 'Medics Package 4',
                 'duration' => '12',
                 'status' => 'active',
-                'featured_image' => 'package4.png',
+                'featured_image' => 'https://app.medicsetal.org/packages/diamond.png',
             ],
 
         ]);

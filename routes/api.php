@@ -8,6 +8,8 @@ use App\Http\Controllers\RTVRSEnumerationController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\UserWalletController;
+use App\Http\Controllers\SubscriptionController;
+
 
 
 
@@ -40,7 +42,7 @@ Route::get('/packages', [PackageController::class, 'packages']);
 
 Route::post('/package', [PackageController::class, 'package']);
 
-Route::post('/payment_callback', [PaymentController::class, 'callback'])->middleware('auth:sanctum');
+Route::post('/payment_callback', [SubscriptionController::class, 'register_subscription'])->middleware('auth:sanctum');
 
 Route::post('/verify_otp', [ApiAuthController::class, 'verify_otp'])->middleware('auth:sanctum');
 

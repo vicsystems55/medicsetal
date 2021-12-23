@@ -120,7 +120,7 @@ class ApiAuthController extends Controller
             } catch (\Throwable $th) {
                 //throw $th;
 
-                
+
             }
 
 
@@ -190,14 +190,18 @@ class ApiAuthController extends Controller
                     // 'access_token' => $token,
                     'user_data' => $user,
                     'token_type' => 'Bearer',
-                ]);   
+                ], 200);   
                 
                 
             }
         } catch (\Throwable $th) {
             //throw $th;
 
-            return $th;
+                return response()->json([
+                    // 'access_token' => $token,
+                    'error' => $th,
+                    
+                ], 401); 
         }
 
       
