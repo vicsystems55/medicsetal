@@ -187,39 +187,6 @@
                 </div>
             </div>
 
-            <div class="features-2" id="part2">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 order-2 order-lg-1 mt-5 mt-lg-0">
-                        <h6 class="text-muted fw-normal">Get started <span class="fw-bold">available courses</span></h6>
-                        <h1 class="fw-bold mt-2">your success <span class="text-primary fw-normal">plan now!</span>
-                        </h1>
-                        <p class="mt-3"> Temporibus quasi adipisci eligendi quaerat iste debitis numquam deleniti labore
-                            corporis
-                            architecto, voluptas cupiditate distinctio?</p>
-                        <div class="get-link mt-4">
-                            <a href="" class="text-primary font-weight-600"> Download free feedback <i
-                                    class="mdi mdi-arrow-right"></i></a>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-7 offset-lg-1 order-1 order-lg-2">
-                        <div class="sec-image-2 position-relative " id="sec-image-2">
-                            <div class="bg-img overflow-hidden border-radius">
-                                <img src="{{asset('landingpage1')}}/images/features/img-2.png" alt="" class="img-fluid">
-                            </div>
-                            <div id="imgcontainer-2">
-                                <div id="inner-3">
-                                    <div class="demo-img-2">
-                                        <div class="demo-overlay">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
 
@@ -237,6 +204,52 @@
         </div>
     </section>
     <!-- end features -->
+
+    <section id="subscribe" class="section cta-2">
+        <div class="cta-image position-relative " id="cta-footer">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center">
+                            <h2 class="fw-bold">Sign up  <span class="text-primary fw-normal">to get started</span>
+                            </h2>
+                          
+
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <form action="" method="post" class="subscribe-form">
+                                        <div class="input-group mb-2">
+                                            <input type="text" class="form-control" placeholder="Please Enter Your Fullname">
+                                        </div>
+
+                                        <div class="input-group mb-2">
+                                            <input type="text" class="form-control" placeholder="Please Enter Your Email">
+                                        </div>
+
+                                        <div class="input-group mb-2">
+                                            <input type="text" class="form-control" placeholder="Please Enter Phone Number">
+                                        </div>
+
+                                        <div class="input-group mb-2 text-right float-right">
+                                            <button class="btn btn-primary float-right">Submit</button>
+                                        </div>
+
+
+
+
+
+
+
+                                    </form>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- start testimonial -->
