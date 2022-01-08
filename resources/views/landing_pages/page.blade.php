@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="title mt-5 mt-lg-0">
-                            Hello, Im Sylvia
+                            Hello, Im {{$user->name}}
                         </h2>
                         <p class="f-16 my-4 text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                             Numquam soluta eius illo, recusandae tenetur saepe, eaque voluptate.</p>

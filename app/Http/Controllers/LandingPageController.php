@@ -21,7 +21,8 @@ class LandingPageController extends Controller
 
             
         return view('landing_pages.page',[
-            'username' => $username
+            'username' => $username,
+            'user' => $user
         ]);
 
 
