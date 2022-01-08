@@ -191,17 +191,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <h5 class="text-black">Explore</h5>
-                    <ul class="menu list-unstyled mt-5">
-                        <li class="menu-item"><a href="">Start here</a></li>
-                        <li class="menu-item"><a href="">Services</a></li>
-                        <li class="menu-item"><a href="">Features</a></li>
-                        <li class="menu-item"><a href="">Client</a></li>
-                        <li class="menu-item"><a href="">Pricing</a></li>
-                        <li class="menu-item"><a href="">support center</a></li>
-                        <li class="menu-item"><a href="">Blogs</a></li>
-                        <li class="menu-item"><a href="">Newsletters</a></li>
-                    </ul>
+                    
 
                 </div>
                 <div class="col-lg-2">
@@ -223,10 +213,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="copy-right mb-5 text-center text-muted">
-                        <script>document.write(new Date().getFullYear())</script> <span class="fw-bold">Slima</span> .
-                        Design with <i class="mdi mdi-heart text-danger"></i> by <a
-                            href="https://themeforest.net/search/themesdesign" target="_blank" class="text-reset"><span
-                                class="fw-bold">Themesdesign</span></a>.
+                        <script>document.write(new Date().getFullYear())</script> <span class="fw-bold">Medics Et Al</span> .
+                       
                     </div>
                 </div>
             </div>

@@ -10,6 +10,10 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\LandingPageController;
 
+use App\Http\Controllers\LeadController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +46,8 @@ Route::get('/coming_soon', [HomeController::class, 'coming_soon'])->name('commin
 
 
 Route::get('/{username}', [LandingPageController::class, 'index'])->name('landing_page');
+
+Route::post('/register_lead', [LeadController::class, 'register_lead'])->name('register_lead');
 
 
 

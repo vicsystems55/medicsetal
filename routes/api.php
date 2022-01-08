@@ -9,6 +9,10 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\UserWalletController;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\LeadController;
+
+
 
 
 
@@ -52,8 +56,14 @@ Route::get('/add_faq', [FAQController::class, 'add_faq'])->middleware('auth:sanc
 
 Route::get('/wallet_balance', [UserWalletController::class, 'wallet_balance'])->middleware('auth:sanctum');
 
+Route::get('/get_notifications', [NotificationController::class, 'get_notifications'])->middleware('auth:sanctum');
+
+Route::get('/get_leads', [LeadController::class, 'get_leads'])->middleware('auth:sanctum');
 
 Route::post('/create_enumeration', [RTVRSEnumerationController::class, 'create_enumeration']);
+
+
+
 
 
 

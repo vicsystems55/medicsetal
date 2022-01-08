@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\User;
+
 class LandingPageController extends Controller
 {
     //
@@ -12,6 +14,26 @@ class LandingPageController extends Controller
     {
         # code...
 
-        return view('landing_pages.page');
+        $user = User::where('username', $username)->first();
+
+        if ($user) {
+            # code...
+
+            
+        return view('landing_pages.page',[
+            'username' => $username
+        ]);
+
+
+        }else{
+
+
+            return view('landing_pages.error',[
+               
+            ]);
+
+
+        }
+
     }
 }

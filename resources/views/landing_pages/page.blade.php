@@ -217,21 +217,24 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
-                                    <form action="" method="post" class="subscribe-form">
+                                    <form action="{{route('register_lead')}}" method="post" class="subscribe-form">
+                                        @csrf
                                         <div class="input-group mb-2">
-                                            <input type="text" class="form-control" placeholder="Please Enter Your Fullname">
+                                            <input type="text" class="form-control" name="name" placeholder="Please Enter Your Fullname">
                                         </div>
 
                                         <div class="input-group mb-2">
-                                            <input type="text" class="form-control" placeholder="Please Enter Your Email">
+                                            <input type="text" class="form-control" name="email" placeholder="Please Enter Your Email">
                                         </div>
 
                                         <div class="input-group mb-2">
-                                            <input type="text" class="form-control" placeholder="Please Enter Phone Number">
+                                            <input type="text" class="form-control" name="phone" placeholder="Please Enter Phone Number">
                                         </div>
+
+                                        <input type="hidden" name="username" value="{{$username}}">
 
                                         <div class="input-group mb-2 text-right float-right">
-                                            <button class="btn btn-primary float-right">Submit</button>
+                                            <button type="submit" class="btn btn-primary float-right">Submit</button>
                                         </div>
 
 

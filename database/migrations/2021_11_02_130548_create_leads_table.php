@@ -16,20 +16,12 @@ class CreateLeadsTable extends Migration
         Schema::create('leads', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('referrer_id')->unsigned();
-            $table->bigInteger('referree_id')->unsigned();
-            $table->string('referral');
-            $table->string('referree');
-            $table->string('position')->nullable();
-            $table->integer('weekInYear');
-            $table->bigInteger('referrer_package_id')->unsigned()->nullable();
-            $table->bigInteger('referree_package_id')->unsigned()->nullable();
-            $table->integer('referrer_bonus')->nullable();
-            $table->integer('referree_points')->nullable();            
-            $table->string('status')->default('active');
-            $table->foreign('referrer_package_id')->references('id')->on('packages');
-            $table->foreign('referree_package_id')->references('id')->on('packages');
+            $table->string('lead_name');
+            $table->string('lead_email');
+            $table->string('lead_phone');
+            $table->string('status')->default('not subscribed');
+
             $table->foreign('referrer_id')->references('id')->on('users');
-            $table->foreign('referree_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
