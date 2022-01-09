@@ -39,10 +39,10 @@ class ApiAuthController extends Controller
                     
             $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users',
            
             'email' => 'required|string|email|max:255|unique:users',
-            'referrer_code' => 'required',
+            'referrer_code' => 'required|exists:users,usercode',
             'password' => 'required|string|min:8',
             ]);
 
@@ -96,7 +96,7 @@ class ApiAuthController extends Controller
         $notification = Notification::create([
             'performed_by' => $user->id,
             'title' => "New Signup",
-            'log' => 'You just signed up welcome to Phoenixgn'
+            'log' => 'You just signed up welcome to Medics Et Al'
         ]);
 
         $datax = [
@@ -111,6 +111,7 @@ class ApiAuthController extends Controller
             try {
                 //code...
                 Mail::to($user->email)
+                ->from('support@medicsetal.org', 'Rex from Medics Et Al')
                 ->send(new Welcome($datax));
     
     
@@ -137,7 +138,7 @@ class ApiAuthController extends Controller
         } catch (\Throwable $th) {
             //throw $th;
 
-            return $th;
+            return $th->errors();
         }
             
 
