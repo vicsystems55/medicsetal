@@ -111,7 +111,6 @@ class ApiAuthController extends Controller
             try {
                 //code...
                 Mail::to($user->email)
-                ->from('support@medicsetal.org', 'Rex from Medics Et Al')
                 ->send(new Welcome($datax));
     
     

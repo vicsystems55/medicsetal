@@ -171,7 +171,11 @@
                 <div class="col-lg-6">
                     <div class="address-content fw-bold">
                         <h5 class="text-black">Address</h5>
-                        <p class="mt-5  f-14 ">River Way behind Salt Lake City, UT 8402</p>
+
+                        <p class="mt-5  f-14 ">Suit C6 Plot 1118, Simchristy Plaza , Gudu District
+                        Abuja Federal Capital Territory 900001
+                        NIGERIA </p>
+                      
                         <p class="mt-3 f-14 ">+(540)801-468-2313 (10am - 6pm, Monday - Saturday)</p>
                         <a href="" class=" f-14">info@example.com</a>
                     </div>
@@ -179,15 +183,11 @@
                         <div class="facebook">
                             <a href=""><i class="mdi mdi-facebook-box f-30"></i></a>
                         </div>
-                        <div class="twitter ms-4">
-                            <a href=""><i class="mdi mdi-twitter f-30"></i></a>
-                        </div>
+                        
                         <div class="twitter ms-4">
                             <a href=""><i class="mdi mdi-instagram f-30"></i></a>
                         </div>
-                        <div class="twitter ms-4">
-                            <a href=""><i class="mdi mdi-linkedin-box f-30"></i></a>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4">

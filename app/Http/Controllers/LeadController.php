@@ -28,8 +28,8 @@ class LeadController extends Controller
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
             
-        ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6053195/subscribers',[
-            'ad_tracking' => 'mindigo',
+        ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers',[
+            'ad_tracking' => 'medics_et_al',
             
             'email' => $request->email,
             'ip_address' => $request->ip(),
