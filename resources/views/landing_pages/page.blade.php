@@ -453,10 +453,9 @@
                 <div class="col-lg-10">
                     <div class="text-center">
                         <h6 class="text-muted fw-normal">Get Your Best Package</h6>
-                        <h2 class="mb-3">Best <span class="text-primary fw-normal">Pricing</span> Package Start Business
+                        <h2 class="mb-3">Best <span class="text-primary fw-normal">Medics Et Al</span> Packages
                         </h2>
-                        <p class="text-muted para-p mx-auto mb-0">Fugit, voluptatum. Cum earum reprehenderit quis, esse
-                            dolorem quaerat. Recusandae officiis facilis quia quidem iusto labore temporibus.</p>
+
                     </div>
                 </div>
             </div>
@@ -474,6 +473,56 @@
                     </div>
                 </div> --}}
 
+                @foreach ($packages as $package)
+                <div class="col-lg-3 col-md-6  mt-5">
+                    <div class="pricing-box box-shadow p-4 border-radius">
+                        <div class="text-center mb-4">
+                            <h6 class="text-primary">{{$package->name}}</h6>
+                            <div class="price-title mt-2">
+                                <div class=""></div>
+                                <h6 class="mb-0 text-white">{{$package->duration}} Months</h6>
+                            </div>
+                            <div class="price-tag mt-4">
+                                <h4><sup>$</sup><span class="text-primary">{{number_format($package->fee, 2)}}</span></h4>
+                            </div>
+                            <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
+
+                            <div class="detail mt-4">
+                                <p><span class="text-primary icon me-2">∎</span>Access to Health Education Resources</p>
+
+                            </div>
+
+                        </div>
+                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
+                    </div>
+                </div>
+                    
+                @endforeach
+
+
+                {{-- <div class="col-lg-3 col-md-6  mt-5">
+                    <div class="pricing-box box-shadow p-4 border-radius">
+                        <div class="text-center mb-4">
+                            <h6 class="text-primary">Silver</h6>
+                            <div class="price-title mt-2">
+                                <div class="tag"></div>
+                                <h6 class="mb-0 text-white">basic</h6>
+                            </div>
+                            <div class="price-tag mt-4">
+                                <h2><sup>$</sup><span class="text-primary">0</span></h2>
+                            </div>
+                            <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
+
+                            <div class="detail mt-4">
+                                <p><span class="text-primary icon me-2">∎</span>10 GB Disk Space</p>
+                                <p><span class="text-primary icon me-2">∎</span>1 Year Technical Support</p>
+                                <p><span class="text-primary icon me-2">∎</span>SQL Database</p>
+                            </div>
+
+                        </div>
+                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
+                    </div>
+                </div>
                 <div class="col-lg-3 col-md-6  mt-5">
                     <div class="pricing-box box-shadow p-4 border-radius">
                         <div class="text-center mb-4">
@@ -500,7 +549,7 @@
                 <div class="col-lg-3 col-md-6  mt-5">
                     <div class="pricing-box box-shadow p-4 border-radius">
                         <div class="text-center mb-4">
-                            <h6 class="text-primary">Wealth</h6>
+                            <h6 class="text-primary">Diamond</h6>
                             <div class="price-title mt-2">
                                 <div class="tag"></div>
                                 <h6 class="mb-0 text-white">basic</h6>
@@ -519,53 +568,7 @@
                         </div>
                         <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6  mt-5">
-                    <div class="pricing-box box-shadow p-4 border-radius">
-                        <div class="text-center mb-4">
-                            <h6 class="text-primary">Wealth</h6>
-                            <div class="price-title mt-2">
-                                <div class="tag"></div>
-                                <h6 class="mb-0 text-white">basic</h6>
-                            </div>
-                            <div class="price-tag mt-4">
-                                <h2><sup>$</sup><span class="text-primary">0</span></h2>
-                            </div>
-                            <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
-
-                            <div class="detail mt-4">
-                                <p><span class="text-primary icon me-2">∎</span>10 GB Disk Space</p>
-                                <p><span class="text-primary icon me-2">∎</span>1 Year Technical Support</p>
-                                <p><span class="text-primary icon me-2">∎</span>SQL Database</p>
-                            </div>
-
-                        </div>
-                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  mt-5">
-                    <div class="pricing-box box-shadow p-4 border-radius">
-                        <div class="text-center mb-4">
-                            <h6 class="text-primary">Wealth</h6>
-                            <div class="price-title mt-2">
-                                <div class="tag"></div>
-                                <h6 class="mb-0 text-white">basic</h6>
-                            </div>
-                            <div class="price-tag mt-4">
-                                <h2><sup>$</sup><span class="text-primary">0</span></h2>
-                            </div>
-                            <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
-
-                            <div class="detail mt-4">
-                                <p><span class="text-primary icon me-2">∎</span>10 GB Disk Space</p>
-                                <p><span class="text-primary icon me-2">∎</span>1 Year Technical Support</p>
-                                <p><span class="text-primary icon me-2">∎</span>SQL Database</p>
-                            </div>
-
-                        </div>
-                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
-                    </div>
-                </div>
+                </div> --}}
 
            
 
