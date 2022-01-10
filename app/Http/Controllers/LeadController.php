@@ -12,6 +12,9 @@ use App\Models\Notification;
 
 use Illuminate\Support\Facades\Http;
 
+use App\Models\Package;
+
+
 class LeadController extends Controller
 {
     //
@@ -62,7 +65,12 @@ class LeadController extends Controller
         ]);
 
 
-        return view('landing_pages.success');
+        $packages = Package::get();
+
+
+        return view('landing_pages.success',[
+            'packages' => $packages
+        ]);
 
 
 

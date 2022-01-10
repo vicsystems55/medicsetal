@@ -13,14 +13,56 @@
                         </h2>
                         <p class="f-16 my-4 text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                             Numquam soluta eius illo, recusandae tenetur saepe, eaque voluptate.</p>
-                        <button class="btn btn-primary"><i class="mdi mdi-cloud-download f-20 align-middle me-2"></i>
-                            Download free guide</button>
+                      
 
-                        <div class="get-link mt-4">
-                            <a href="" class="text-primary font-weight-600 f-14"><span
-                                    class="text-muted font-weight-500">Have questions?</span><span>Get Free From<i
-                                        class="mdi mdi-arrow-right"></i></span> </a>
-                        </div>
+                       
+
+                            <div class="cta-image position-relative " id="cta-footer">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-12">
+                                            <div class="text-center">
+                                                <h2 class="fw-bold">Sign up  <span class="text-primary fw-normal">to get started</span>
+                                                </h2>
+                                              
+                    
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-12">
+                                                        <form action="{{route('register_lead')}}" method="post" class="subscribe-form">
+                                                            @csrf
+                                                            <div class="input-group mb-2">
+                                                                <input type="text" class="form-control" name="name" placeholder="Please Enter Your Fullname">
+                                                            </div>
+                    
+                                                            <div class="input-group mb-2">
+                                                                <input type="text" class="form-control" name="email" placeholder="Please Enter Your Email">
+                                                            </div>
+                    
+                                                            <div class="input-group mb-2">
+                                                                <input type="text" class="form-control" name="phone" placeholder="Please Enter Phone Number">
+                                                            </div>
+                    
+                                                            <input type="hidden" name="username" value="{{$username}}">
+                    
+                                                            <div class="input-group mb-2 text-right float-right">
+                                                                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                                                        </form>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                     <div class="col-lg-6 mt-5">
                         <div class="animation-image" id="home-animation">
@@ -148,7 +190,7 @@
     <!-- end service -->
 
     <!-- start features -->
-    <section class="section " id="features">
+    <section class="section d-none " id="features">
         <div class="container">
             <div class="row align-items-center" id="part1">
                 <div class="col-lg-7">
@@ -205,7 +247,7 @@
     </section>
     <!-- end features -->
 
-    <section id="subscribe" class="section cta-2">
+    <section id="subscribe" class="section cta-2 d-none">
         <div class="cta-image position-relative " id="cta-footer">
             <div class="container">
                 <div class="row justify-content-center">
@@ -483,7 +525,7 @@
                                 <h6 class="mb-0 text-white">{{$package->duration}} Months</h6>
                             </div>
                             <div class="price-tag mt-4">
-                                <h4><sup>$</sup><span class="text-primary">{{number_format($package->fee, 2)}}</span></h4>
+                                <h4><sup>NGN</sup><span class="text-primary">{{number_format($package->fee, 2)}}</span></h4>
                             </div>
                             <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
 
@@ -784,7 +826,7 @@
 
 
     <!-- start cta -->
-    <section id="subscribe" class="section cta-2">
+    <section id="subscribe" class="section d-none cta-2">
         <div class="cta-image position-relative " id="cta-footer">
             <div class="container">
                 <div class="row justify-content-center">
