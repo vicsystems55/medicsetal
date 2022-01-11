@@ -18,16 +18,16 @@
                        
 
                             <div class="cta-image position-relative " id="cta-footer">
-                                <div class="container">
-                                    <div class="row justify-content-center">
+                                <div class="containe">
+                                    <div class="">
                                         <div class="col-lg-12">
-                                            <div class="text-center">
-                                                <h2 class="fw-bold">Sign up  <span class="text-primary fw-normal">to get started</span>
-                                                </h2>
+                                            <div class="">
+                                                {{-- <h2 class="fw-bold">Sign up  <span class="text-primary fw-normal">to get started</span>
+                                                </h2> --}}
                                               
                     
-                                                <div class="row justify-content-center">
-                                                    <div class="col-lg-12">
+                                                <div class=" ">
+                                                    <div class="col-lg-7">
                                                         <form action="{{route('register_lead')}}" method="post" class="subscribe-form">
                                                             @csrf
                                                             <div class="input-group mb-2">
@@ -489,7 +489,7 @@
 
 
     <!-- pricing section -->
-    <section class="section bg-light" id="pricing">
+    <section class="section bg-light d-none" id="pricing">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
