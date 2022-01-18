@@ -12,6 +12,7 @@ use App\Http\Controllers\LandingPageController;
 
 use App\Http\Controllers\LeadController;
 
+use App\Http\Controllers\PaymentController;
 
 
 /*
@@ -45,7 +46,11 @@ Route::get('/adminx', [HomeController::class, 'admin'])->name('admin');
 Route::get('/coming_soon', [HomeController::class, 'coming_soon'])->name('comming_soon');
 
 
-Route::get('/{username}', [LandingPageController::class, 'index'])->name('landing_page');
+Route::get('/m/{username}', [LandingPageController::class, 'index'])->name('landing_page');
+
+Route::get('/subscribe-success', [LeadController::class, 'subscribe_success'])->name('subscribe-success');
+
+Route::get('/payment_success', [LeadController::class, 'payment_success'])->name('payment_success');
 
 Route::post('/register_lead', [LeadController::class, 'register_lead'])->name('register_lead');
 
@@ -101,5 +106,11 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function(){
 
     
 });
+
+
+// Laravel 8
+Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
+
+Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
 
 
