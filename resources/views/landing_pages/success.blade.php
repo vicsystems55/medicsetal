@@ -154,7 +154,7 @@
                                 </div>
     
                             </div>
-                            <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
+                            <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x ">Sign Up</button>
                         </div>
                     </div>
                         
@@ -238,6 +238,7 @@
             </div>
         </section>
         <!-- end pricing -->
+        
 
     
 

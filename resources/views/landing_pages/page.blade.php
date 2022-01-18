@@ -64,10 +64,32 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="col-lg-6 mt-5">
+                    <div class="col-lg-6 mt-5 d-none">
                         <div class="animation-image" id="home-animation">
                             <div class="main-image mt-5 mt-lg-0 ms-lg-5 position-relative">
                                 <img src="{{asset('landingpage1')}}/images/home/home-bg.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="sec-image position-relative " id="sec-image">
+                            <div class="bg-img overflow-hidden border-radius">
+                                <img src="{{asset('landingpage1')}}/images/features/img-1.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="youtube-icon ">
+                                <a href="#watchvideomodal" data-bs-toggle="modal">
+                                    <img src="{{asset('landingpage1')}}/images/features/youtube.png" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div id="imgcontainer-1">
+                                <div id="inner-2">
+                                    <div class="demo-img">
+                                        <div class="demo-overlay">
+    
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -535,7 +557,7 @@
                             </div>
 
                         </div>
-                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x">Sign Up</button>
+                        <button class="btn btn-primary rounded-pill position-absolute start-50 translate-middle-x done">Sign Up</button>
                     </div>
                 </div>
                     
