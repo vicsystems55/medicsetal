@@ -11,8 +11,7 @@
                         <h2 class="title mt-5 mt-lg-0">
                             Hello, Im {{$user->name}}
                         </h2>
-                        <p class="f-16 my-4 text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Numquam soluta eius illo, recusandae tenetur saepe, eaque voluptate.</p>
+                        <p class="f-16 my-4 text-muted">Our mission is to raise a global community of healthy individual through </p>
                       
 
                        
@@ -93,6 +92,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="modal fade bd-example-modal-lg" id="watchvideomodal" data-keyboard="false" tabindex="-1"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg">
+                        <div class="modal-content hero-modal-0 bg-transparent">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <iframe src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -148,17 +157,15 @@
 
 
     <!-- start service -->
-    <section class="section bg-light d-none" id="service d-none">
+    <section class="section bg-light " id="service ">
         <div class="container">
             <div class="row justify-content-center mb-4 pb-2">
                 <div class="col-lg-6">
                     <div class="heading text-center">
-                        <h6 class="text-muted f-16 fw-normal">Learning to Write as a Professional</h6>
-                        <h2 class="mb-3">Start <span class="text-primary fw-normal"> your project </span> with these
-                            <br> stunning pages.
+                        <h6 class="text-muted f-16 fw-normal d-none">Learning to Write as a Professional</h6>
+                        <h2 class="mb-3">We guarantee the following
                         </h2>
-                        <p class="text-muted para-p mx-auto mb-0">Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Nulla veniam impedit hic, tempore esse voluptatum. </p>
+                        <p class="text-muted para-p mx-auto mb-0">We strongly believe that you can and should live in good health and vitality all the days of your life in this world. However, research has shown that your health and vitality is 80% dependant on what you do with regards to the four factors that determine longevity and 20% on medical care from health care professionals. Therefore, the bridge between sickness and health is Health Education.</p>
                     </div>
                 </div>
             </div>
@@ -166,46 +173,51 @@
             <div class="row">
                 <div class="col-lg-4 mt-4 pt-2">
                     <div class="service-box text-center text-lg-start">
-                        <div class="service-image">
+                        <div class="service-image d-none">
                             <img src="{{asset('landingpage1')}}/images/service/img-1.png" alt="img-fluid">
                         </div>
-                        <h5 class="fw-bold mt-4 mb-3">Customize Preferences</h5>
-                        <p>Learners are given the right to arrange and customize their study schedule and timetable
-                            based on preferences.</p>
-                        <div class="button-link mt-2">
-                            <a href="" class="f-14 fw-bold">Start hear <i
-                                    class="mdi mdi-arrow-right align-middle"></i></a>
-                        </div>
+                        <h5 class="fw-bold mt-4 mb-3">Significant and evidence based positive outcomes in your health after a few months (90days).</h5>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 mt-4 pt-2">
                     <div class="service-box text-center text-lg-start">
-                        <div class="service-image">
+                        <div class="service-image d-none">
                             <img src="{{asset('landingpage1')}}/images/service/img-2.png" alt="img-fluid">
                         </div>
-                        <h5 class="fw-bold mt-4 mb-3">Truly Multipurpose</h5>
-                        <p>Learners are given the right to arrange and customize their study schedule and timetable
-                            based on preferences.</p>
-                        <div class="button-link mt-2">
-                            <a href="" class="f-14 fw-bold">Get Free Quote <i
-                                    class="mdi mdi-arrow-right align-middle"></i></a>
-                        </div>
+                        <h5 class="fw-bold mt-4 mb-3">Reversal of chronic health conditions naturally.</h5>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 mt-4 pt-2">
                     <div class="service-box text-center text-lg-start">
-                        <div class="service-image">
+                        <div class="service-image d-none">
                             <img src="{{asset('landingpage1')}}/images/service/img-3.png" alt="img-fluid">
                         </div>
-                        <h5 class="fw-bold mt-4 mb-3">Strategy Solutions</h5>
-                        <p>Learners are given the right to arrange and customize their study schedule and timetable
-                            based on preferences.</p>
-                        <div class="button-link mt-2">
-                            <a href="" class=" f-14 fw-bold">Start hear <i
-                                    class="mdi mdi-arrow-right align-middle"></i></a>
-                        </div>
+                        <h5 class="fw-bold mt-4 mb-3">Reduced hospital visits.</h5>
+                        
                     </div>
                 </div>
+
+                <div class="col-lg-4 mt-4 pt-2">
+                    <div class="service-box text-center text-lg-start">
+                        <div class="service-image d-none">
+                            <img src="{{asset('landingpage1')}}/images/service/img-3.png" alt="img-fluid">
+                        </div>
+                        <h5 class="fw-bold mt-4 mb-3">Money saved from drugs and medications.</h5>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 pt-2">
+                    <div class="service-box text-center text-lg-start">
+                        <div class="service-image d-none">
+                            <img src="{{asset('landingpage1')}}/images/service/img-3.png" alt="img-fluid">
+                        </div>
+                        <h5 class="fw-bold mt-4 mb-3">Healthy live even in old age.</h5>
+                        
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -320,7 +332,7 @@
 
 
     <!-- start testimonial -->
-    <section class="section testi-slider position-relative" id="user">
+    <section class="section testi-slider position-relative d-none" id="user">
         <div class="container-fluid">
             <div class="section-bottom-shape-two">
                 <img src="{{asset('landingpage1')}}/images/features/shape.png" alt="">
@@ -429,7 +441,7 @@
 
 
     <!-- start cta -->
-    <section class="cta section" id="cta-ani">
+    <section class="cta section d-none" id="cta-ani">
         <div class="cta-image position-relative">
             <div class="container position-relative">
                 <div class="row justify-content-center">
@@ -452,7 +464,7 @@
 
 
     <!-- counter section-->
-    <section class="counter ">
+    <section class="counter d-none ">
         <div class="container">
             <div class="row" id="counter">
                 <div class="col-lg-3 p-lg-0">
@@ -644,7 +656,7 @@
 
 
     <!-- start faq  -->
-    <section class="section faq" id="faq">
+    <section class="section faq d-none" id="faq">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
