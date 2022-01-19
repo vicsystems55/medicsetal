@@ -145,7 +145,7 @@
                         <input type="radio" class="" onclick="setAmount(this.value)" data-preference="{{$package->id}}" name="select" value="{{$package->fee * 100}}" id="">
                        
                             <div onclick="selectProduct(this.id)" id="{{$package->id}}" class=" pricing-box box-shadow p-4 border-radius ">
-                               
+                                <input type="hidden" id="{{$package->fee * 100}}" value="{{$package->id}}">
                                 <div class="text-center mb-4">
                                     <h6 class="text-primary">{{$package->name}}</h6>
                                     <div class="price-title mt-2">
@@ -273,31 +273,29 @@
                                 <div class="card mt-4">
                                     <a data-bs-toggle="collapse" href="#collapse1" class="faq collapsed">
                                         <div class="card-header p-4" id="heading1">
-                                            <h5 class="mb-0 text-dark">Paystack</h5>
+                                            <h5 class="mb-0 text-dark">Paystack.</h5>
                                         </div>
                                     </a>
                                     <div id="collapse1" class="collapse show" aria-labelledby="heading1"
                                         data-parent="#accordionExample">
                                         <div class="card-body pt-1">
 
-                                            <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                                            <form method="POST" action="{{ route('pay') }}" >
                                                 <div class="row" >
                                                     <div class="">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control mb-2" name="name" value="" placeholder="Fullname"> {{-- required --}}
+                                                            <input type="text" class="form-control mb-2" name="firstname" value="" placeholder="Fullname"> {{-- required --}}
                                                         </div>
 
                                                         <div class="form-group">
                                                             <input type="text" class="form-control mb-2" name="email" value="{{$subscriber_email}}" placeholder="Email">
                                                         </div>
                                                         
-                                                        
-                                                       
-                                                        <input type="hidden" name="orderID" value="345">
                                                         <input type="hidden" id="amount" name="amount" value=""> {{-- required in kobo --}}
-                                                        
+                                                        {{-- <input type="hidden" id="orderID" name="orderID" value="777"> --}}
+                                                        {{-- <input type="hidden" name="quantity" value="2"> --}}
                                                         <input type="hidden" name="currency" value="NGN">
-                                                        <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                                         {{-- For other necessary things you want to add to your payload. it is optional though --}}
                                                         <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
                                                         <input type="hidden" name="callback_url" value="{{config('app.url')}}payment_success" id="">
 
@@ -365,11 +363,16 @@
 
 
 <script>
-    function setAmount(value) {
+    function setAmount(valuex) {
 
-        alert(value)
+        console.log(valuex)
 
-        document.getElementById('amount').value = value;
+       
+
+        document.getElementById('amount').value = valuex;
+
+        document.getElementById('orderID').value = document.getElementById(valuex).value;
+
         
     }
 </script>

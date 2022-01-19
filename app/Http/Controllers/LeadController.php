@@ -104,95 +104,123 @@ class LeadController extends Controller
     public function payment_success()
     {
 
-        $packages = Package::get();
+        // $packages = Package::get();
 
-        $paymentDetails = Paystack::getPaymentData();
+        // $paymentDetails = Paystack::getPaymentData();
 
-        dd($paymentDetails);
+        // $amount_paid = $paymentDetails['data']['amount'];
 
+        // $payer_email = $paymentDetails['data']['customer']['email'];
 
-        $package = Package::find($request->package_id);
+        // $package = Package::where('fee', $amount_paid/100)->first();
 
-        $end_date = Carbon::now()->addMonth($package->duration);
+        // $referrer_data = Lead::where('lead_email', $payer_email)->first();
 
-        try {
-            //code...
-            $subscription = Subscription::create([
-                'user_id' => $request->user()->id,
-                'start_date' => Carbon::now(),
-                'end_date' => $end_date,
-                'package_id' => $request->package_id,
-                'status' => 'active',
-                  
-            ]);
+        // // $referrer_data->referrer->usercode;
 
-            $lms_password = $request->user()->usercode .rand(100, 999);
+        // // dd($paymentDetails); 
 
-            try {
+        // $regCode = "MED" .rand(11100,999999);
+
                 
-                $responsex = Http::withBasicAuth('admin', 'pureweb')-> post('https://edu.medicsetal.org/wp-json/wp/v2/users', [
-                    'name' => $request->user()->name,
-                    'username' => $request->user()->email,
-                    'first_name' => $request->user()->name,
-                    'last_name' => '',
-                    'email' => $request->user()->email,
-                   
-                    'description' => '',
-                    'nickname' => $request->user()->usercode,
-                    'slug' => $request->user()->usercode,
-                    'roles' => 'subscriber',
-                    'password' => $request->user()->real_password ?? $lms_password,
-                    'locale' => 'en_US',
+        // $user = User::create([
+        //     'name' => $payer_email,
+        //     'email' => $payer_email,
+        //     'username' => $payer_email,
+        //     'usercode' => $regCode,
+        //     'sponsors_id' =>  $referrer_data->referrer->usercode,
+        //     'real_password' => uniqid(),
+        //     'password' => Hash::make(uniqid()),
+        // ]);
+
+
+        // // $package = Package::find($package->id);
+
+        // $end_date = Carbon::now()->addMonth($package->duration);
+
+        // try {
+        //     //code...
+        //     $subscription = Subscription::create([
+        //         'user_id' => $user->id,
+        //         'start_date' => Carbon::now(),
+        //         'end_date' => $end_date,
+        //         'package_id' => $package->id,
+        //         'status' => 'active',
                   
-                ]);
+        //     ]);
 
-                // return $responsex;
+        //     $lms_password = $user->usercode .rand(100, 999);
 
-            } catch (\Throwable $thx) {
-            //     //throw $th;
+        //     try {
+                
+        //         $responsex = Http::withBasicAuth('admin', 'pureweb')-> post('https://edu.medicsetal.org/wp-json/wp/v2/users', [
+        //             'name' => $payer_email,
+        //             'username' => $payer_email,
+        //             'first_name' => $payer_email,
+        //             'last_name' => '',
+        //             'email' => $payer_email,
+                   
+        //             'description' => '',
+        //             'nickname' => $user->usercode,
+        //             'slug' => $user->usercode,
+        //             'roles' => 'subscriber',
+        //             'password' => $user->real_password ?? $lms_password,
+        //             'locale' => 'en_US',
+                  
+        //         ]);
 
-            //     return $thx;
-            }
+        //         // return $responsex;
 
-            $datax = [
-                'package_name' => $package->name,
-                'logo' => $package->featured_image,
-                'end_date' => $end_date,
-                'users_name' => $request->user()->name,
-                'lms_password' => $request->user()->real_password,
-                'lms_username' => $request->user()->email
-            ];
+        //     } catch (\Throwable $thx) {
+        //     //     //throw $th;
+
+        //     //     return $thx;
+        //     }
+
+        //     $datax = [
+        //         'package_name' => $package->name,
+        //         'logo' => $package->featured_image,
+        //         'end_date' => $end_date,
+        //         'users_name' => $user->name,
+        //         'lms_password' => $user->real_password,
+        //         'lms_username' => $user->email
+        //     ];
 
     
-            // try {
-                //code...
+        //     // try {
+        //         //code...
     
-                try {
-                    //code...
-                    Mail::to($request->user()->email)
-                    ->send(new SubscriptionSuccessful($datax));
+        //         try {
+        //             //code...
+        //             Mail::to($user->email)
+        //             ->send(new SubscriptionSuccessful($datax));
         
 
-                } catch (\Throwable $th) {
-                    //throw $th;
+        //         } catch (\Throwable $th) {
+        //             //throw $th;
 
-                    return $th;
+        //             return $th;
     
     
-                }
+        //         }
     
     
-            return response()->json([
-                'subscription' => $subscription,
+        //     return response()->json([
+        //         'subscription' => $subscription,
             
-            ]);
+        //     ]);
 
 
-        } catch (\Throwable $th) {
-            //throw $th;
+        // } catch (\Throwable $th) {
+        //     //throw $th;
 
-            return $th;
-        }
+        //     // return $th;
+
+        //     return redirect('/account_success');
+        // }
+
+
+        return redirect('/account_success');
 
 
 
@@ -200,8 +228,17 @@ class LeadController extends Controller
       
 
 
+        // return view('landing_pages.success_paid',[
+        //     'packages' => $packages
+        // ]);
+    }
+
+    public function account_success()
+    {
+        
+        
         return view('landing_pages.success_paid',[
-            'packages' => $packages
+           
         ]);
     }
 

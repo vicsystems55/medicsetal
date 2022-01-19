@@ -52,6 +52,8 @@ Route::get('/subscribe-success', [LeadController::class, 'subscribe_success'])->
 
 Route::get('/payment_success', [LeadController::class, 'payment_success'])->name('payment_success');
 
+Route::get('/account_success', [LeadController::class, 'account_success'])->name('account_success');
+
 Route::post('/register_lead', [LeadController::class, 'register_lead'])->name('register_lead');
 
 
