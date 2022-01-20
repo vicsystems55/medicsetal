@@ -25,8 +25,8 @@
                             You have successfully subscribed to Medics Et Al Package
                         </h2>
                         <p class="f-16 my-4 text-muted">Please contact support for any questions.</p>
-                        <button class="btn btn-primary"><i class="mdi mdi-cloud-download f-20 align-middle me-2"></i>
-                            support@medicsetal.org</button>
+                        <a href="https://affiliates.medicsetal.org" class="btn btn-primary"><i class="mdi mdi-cloud-download f-20 align-middle me-2"></i>
+                            My Account</a>
 
                         <div class="get-link mt-4">
                             <a href="" class="text-primary font-weight-600 f-14"><span
