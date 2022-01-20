@@ -16,6 +16,8 @@
 
 <p>  You now have access to the LMS Platform with the following credentials</p>
 
+<p>https://edu.medicsetal.org</p>
+
 <h3>Username: {{ $data['lms_username'] }}</h3>
 <h3>Password: {{ $data['lms_password'] }}</h3>
 
