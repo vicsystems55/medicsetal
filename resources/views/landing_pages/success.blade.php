@@ -56,11 +56,11 @@
     </section>
 
     <section class="section " id="features">
-        <div class="container">
+        <div class="container-fluid ">
 
             @foreach ($packages as $package)
 
-            <div class="features-2" id="part2">
+            <div class="features-2 card card-body mt-2" id="part2">
                 <div class="row align-items-center">
                     <div class="col-lg-5 order-2 order-lg-1 mt-5 mt-lg-0">
                
@@ -79,11 +79,7 @@
                             </div>
                             <div id="imgcontainer-2">
                                 <div id="inner-3">
-                                    <div class="demo-img-2">
-                                        <div class="demo-overlay">
-
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
