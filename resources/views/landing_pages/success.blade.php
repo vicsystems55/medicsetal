@@ -75,7 +75,7 @@
                     <div class="col-lg-7 offset-lg-1 order-1 order-lg-2">
                         <div class="sec-image-2 position-relative " id="sec-image-2">
                             <div class="bg-img overflow-hidden border-radius">
-                                <img src="{{config('app.url')}}landingpage1/images/features/img-2.png" alt="" class="img-fluid">
+                                <img style="max-height: 300px;" src="{{$package->featured_image}}" alt="" class="img-fluid">
                             </div>
                             <div id="imgcontainer-2">
                                 <div id="inner-3">
