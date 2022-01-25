@@ -158,38 +158,7 @@
                                     <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
         
                                     <div class="detail mt-4 text-left">
-                                        <p>
-                                            <span class="text-primary icon me-2">∎</span>
-                                            Access to Health Education Resources
-                                        
-                                        </p>
-                                        <p>
-                                           <span class="text-primary icon me-2">∎</span> 
-                                            Origin of disease</p>
-                                        <p>
-                                            <span class="text-primary icon me-2">∎</span>
-                                            Password to healt</p>
-                                        <p>
-                                            <span class="text-primary icon me-2">∎</span>
-                                            .Glutathione solutio</p>
-                                        <p>
-                                            <span class="text-primary icon me-2">∎</span>
-                                            Reason why you should be on food supplemen</p>
-                                        <p>
-                                            <span class="text-primary icon me-2">∎</span>
-                                            Cellgevity- the Ultimate Solutio</p>
-                                        <p>
-                                            <span class="text-primary icon me-2">∎</span>
-                                            Carbs  for lif</p>
-                                        <p>
-                                           <span class="text-primary icon me-2">∎</span> 
-                                            Whole Food Plant-based die</p>
-                                        <p>
-                                           <span class="text-primary icon me-2">∎</span> 
-                                            Blue Zon</p>
-                                        <p>
-                                            <span class="text-primary icon me-2">∎</span>
-                                            Definitive Agin</p>
+                                            
         
                                     </div>
         
