@@ -55,44 +55,47 @@
 
     </section>
 
-    <section class="section d-none" id="features">
+    <section class="section " id="features">
         <div class="container">
-            <div class="row align-items-center" id="part1">
-                <div class="col-lg-7">
-                    <div class="sec-image position-relative " id="sec-image">
-                        <div class="bg-img overflow-hidden border-radius">
-                            <img src="{{asset('landingpage1')}}/images/features/img-1.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="youtube-icon ">
-                            <a href="#watchvideomodal" data-bs-toggle="modal">
-                                <img src="{{asset('landingpage1')}}/images/features/youtube.png" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                        <div id="imgcontainer-1">
-                            <div id="inner-2">
-                                <div class="demo-img">
-                                    <div class="demo-overlay">
 
+            @foreach ($packages as $package)
+
+            <div class="features-2" id="part2">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 order-2 order-lg-1 mt-5 mt-lg-0">
+               
+                        <h1 class="fw-bold mt-2"><span class="text-primary fw-normal">{{$package->name}}</span>
+                        </h1>
+                        <p class="mt-3"> {{$package->description}}</p>
+                        <div class="get-link mt-4">
+                        NGN {{number_format($package->fee, 2)}}
+                        </div>
+
+                    </div>
+                    <div class="col-lg-7 offset-lg-1 order-1 order-lg-2">
+                        <div class="sec-image-2 position-relative " id="sec-image-2">
+                            <div class="bg-img overflow-hidden border-radius">
+                                <img src="{{config('app.url')}}landingpage1/images/features/img-2.png" alt="" class="img-fluid">
+                            </div>
+                            <div id="imgcontainer-2">
+                                <div id="inner-3">
+                                    <div class="demo-img-2">
+                                        <div class="demo-overlay">
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 offset-lg-1 mt-5 mt-lg-0">
-                    <h6 class="text-muted fw-normal">Your profit <span class="fw-bold">grows & enjoy</span></h6>
-                    <h1 class="fw-bold mt-2">Get Awesome <span class="text-primary fw-normal">Companionship</span></h1>
-                    <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus qui, pariatur nulla,
-                        sint
-                        voluptatibus explicabo voluptates aliquid dolorem suscipit nostrum expedita itaque nesciunt
-                        autem ?</p>
-                    <div class="get-link mt-4">
-                        <a href="" class="text-primary font-weight-600"> Download free feedback <i
-                                class="mdi mdi-arrow-right"></i></a>
-                    </div>
-
-                </div>
             </div>
+                
+            @endforeach
+           
+           
+
+          
 
         </div>
 
@@ -110,6 +113,9 @@
             </div>
         </div>
     </section>
+
+            <div class="features-2" id="part2">
+
     <!-- end section -->
 
 
@@ -158,8 +164,9 @@
                                     <!-- <p class="text-muted mt-2">For small teams trying out Levonic <br> for an unlimited </p> -->
         
                                     <div class="detail mt-4 text-left">
-                                            
-        
+
+                               
+
                                     </div>
         
                                 </div>
