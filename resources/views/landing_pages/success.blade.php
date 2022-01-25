@@ -56,11 +56,11 @@
     </section>
 
     <section class="section " id="features">
-        <div class="container-fluid ">
+        <div class="container ">
 
             @foreach ($packages as $package)
 
-            <div class="features-2 card card-body mt-2" id="part2">
+            <div class="features-2 " id="part2">
                 <div class="row align-items-center">
                     <div class="col-lg-5 order-2 order-lg-1 mt-5 mt-lg-0">
                
