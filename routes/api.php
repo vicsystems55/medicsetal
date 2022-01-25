@@ -13,6 +13,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\LeadController;
 
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\CourseController;
 
 
 
@@ -65,6 +66,8 @@ Route::get('/get_leads', [LeadController::class, 'get_leads'])->middleware('auth
 Route::post('/create_enumeration', [RTVRSEnumerationController::class, 'create_enumeration']);
 
 Route::post('/user_stats', [UserProfileController::class, 'user_stats']);
+
+Route::post('/courses', [CourseController::class, 'courses']);
 
 
 

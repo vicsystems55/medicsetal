@@ -15,6 +15,13 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->string('featured_image');
+            $table->string('video_url');
+            $table->bigInteger('package_id')->unsigned();
+            $table->foreign('package_id')->references('id')->on('packages');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

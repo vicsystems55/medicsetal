@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
+
+    public function package()
+    {
+        return $this->belongsTo('App\Models\Package', 'package_id');
+    }
 }

@@ -11,7 +11,7 @@
                         <h2 class="title mt-5 mt-lg-0">
                             Congratulations, you journey has began
                         </h2>
-                        <h4 class="f-16 my-4 text-muted">Please check your mail for information on how to proceed.</h4>
+                        <h4 style="z-index: 999;" class="f-16 my-4 text-muted">Please check your mail for information on how to proceed.</h4>
                         
 
                         
