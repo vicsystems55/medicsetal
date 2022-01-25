@@ -62,7 +62,7 @@
 
             <div class="features-2" id="part2">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 order-2 order-lg-1 mt-5 mt-lg-0">
+                    <div class="col-lg-5 order-2 order-lg-1 mt-5 mt-lg-0">
                
                         <h1 class="fw-bold mt-2"><span class="text-primary fw-normal">{{$package->name}}</span>
                         </h1>
@@ -72,7 +72,7 @@
                         </div>
 
                     </div>
-                    <div class="col-lg-7 offset-lg-1 order-1 order-lg-2">
+                    <div class="col-lg-6 offset-lg-1 order-1 order-lg-2">
                         <div class="sec-image-2 position-relative " id="sec-image-2">
                             <div class="bg-img overflow-hidden border-radius">
                                 <img style="max-height: 300px;" src="{{$package->featured_image}}" alt="" class="img-fluid">
@@ -93,7 +93,7 @@
                 
             @endforeach
            
-           
+
 
           
 
