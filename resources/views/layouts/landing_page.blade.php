@@ -177,7 +177,8 @@
 
                         </p>
                       
-                        <p class="mt-3 f-14 ">+(540)801-468-2313</p>
+                        <p class="mt-3 f-14 ">+234 703 510 8928 <br>
+                            +234 703 082 4286</p>
                         <a href="" class=" f-14">support@medicsetal.org</a>
                     </div>
                     <div class="social-icon d-flex mt-4 mb-4 mb-lg-0">
