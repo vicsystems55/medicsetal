@@ -12,6 +12,8 @@ use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\LeadController;
 
+use App\Http\Controllers\UserProfileController;
+
 
 
 
@@ -61,6 +63,8 @@ Route::get('/get_notifications', [NotificationController::class, 'get_notificati
 Route::get('/get_leads', [LeadController::class, 'get_leads'])->middleware('auth:sanctum');
 
 Route::post('/create_enumeration', [RTVRSEnumerationController::class, 'create_enumeration']);
+
+Route::post('/user_stats', [UserProfileController::class, 'user_stats']);
 
 
 

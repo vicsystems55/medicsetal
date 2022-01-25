@@ -24,7 +24,7 @@
                         <h2 class="title mt-5 mt-lg-0">
                             You have successfully subscribed to Medics Et Al Package
                         </h2>
-                        <p class="f-16 my-4 text-muted">Please contact support for any questions.</p>
+                        <h3 class="f-16 my-4 text-muted">Please contact support for any questions.</p>
                         <a href="https://affiliate.medicsetal.org" class="btn btn-primary">
                             LOGIN</a>
 

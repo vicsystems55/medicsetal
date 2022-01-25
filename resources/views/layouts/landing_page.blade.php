@@ -172,9 +172,10 @@
                     <div class="address-content fw-bold">
                         <h5 class="text-black">Address</h5>
 
-                        <p class="mt-5  f-14 ">Suit C6 Plot 1118, Simchristy Plaza , Gudu District
-                        Abuja Federal Capital Territory 900001
-                        NIGERIA </p>
+                        <p class="mt-5  f-14 ">
+                            Medics et al Ltd,  Plot 1118, Oladipo Diya Road, Simichristy Plaza, Gudu District. FCT
+
+                        </p>
                       
                         <p class="mt-3 f-14 ">+(540)801-468-2313 (10am - 6pm, Monday - Saturday)</p>
                         <a href="" class=" f-14">info@example.com</a>
@@ -197,9 +198,9 @@
                 <div class="col-lg-2">
                     <h5 class="text-black">Explore</h5>
                     <ul class="menu mt-5 list-unstyled d-block">
-                        <li class="info-item"><a href="">Membership</a></li>
-                        <li class="info-item"><a href="">Purchase guide</a></li>
-                        <li class="info-item"><a href="">Privacy policy</a></li>
+                        <li class="info-item"><a href="https://affiliate.medicsetal.org">Membership</a></li>
+                        <li class="info-item"><a href="https://edu.medicsetal.org">Our courses</a></li>
+                        <li class="info-item"><a href="https://medicsetal.org">About us</a></li>
                         <li class="info-item"><a href="">Terms of service</a></li>
                     </ul>
                 </div>
