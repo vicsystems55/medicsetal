@@ -13,44 +13,64 @@ class CourseController extends Controller
     public function courses(Request $request)
     {
 
-        if ($request->category == 1) {
+        if ($request->category) {
             # code...
-
-            $courses = Course::with('package')->where('package_id', 1)->get();
-        
-            return $courses;
+            if ($request->category == 1) {
+                # code...
+    
+                $courses = Course::with('package')->where('package_id', 1)->get();
+            
+                return $courses;
+            }
+    
+            if ($request->category == 2) {
+                # code...
+    
+                $courses = Course::with('package')->where('package_id', 2)->get();
+            
+                return $courses;
+            }
+    
+            if ($request->category == 3) {
+                # code...
+    
+                $courses = Course::with('package')->where('package_id', 3)->get();
+            
+                return $courses;
+            }
+    
+            if ($request->category == 4) {
+                # code...
+    
+                $courses = Course::with('package')->where('package_id', 4)->get();
+            
+                return $courses;
+            }
+    
+            else{
+                # code...
+    
+                $courses = Course::with('package')->get();
+            
+                return $request->al();
+            }
         }
 
-        if ($request->category == 2) {
+        if ($request->course_id) {
             # code...
 
-            $courses = Course::with('package')->where('package_id', 2)->get();
-        
-            return $courses;
-        }
+            try {
+                //code...
+                $course_details = Course::with('package')->find($request->course_id);
 
-        if ($request->category == 3) {
-            # code...
+                return $course_details;
 
-            $courses = Course::with('package')->where('package_id', 3)->get();
-        
-            return $courses;
-        }
 
-        if ($request->category == 4) {
-            # code...
+            } catch (\Throwable $th) {
+                //throw $th;
 
-            $courses = Course::with('package')->where('package_id', 4)->get();
-        
-            return $courses;
-        }
-
-        else{
-            # code...
-
-            $courses = Course::with('package')->get();
-        
-            return $request->al();
+                return $th;
+            }
         }
 
 
