@@ -8,10 +8,10 @@
             <div class="home-content">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h4 class="title mt-5 mt-lg-0">
+                        <h4 class="titl mt-5 mt-lg-0">
                             Congratulations, your journey has began
                         </h4>
-                        <h4 style="z-index: 999;" class="f-16 my-4 text-muted">Please check your mail for information on how to proceed.</h4>
+                        <h4 style="z-index: 999;" class="f-16 my-4 text-muted">Watch the video below and check your mail for information on how to proceed.</h4>
                         
 
                         
@@ -71,6 +71,38 @@
                         NGN {{number_format($package->fee, 2)}}
                         </div>
 
+                        <form method="POST" action="{{ route('pay') }}" >
+                            <div class="row" >
+                                <div class="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control mb-2 d-none" name="firstname" value="" placeholder="Fullname"> {{-- required --}}
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control mb-2 d-none" name="email" value="{{$subscriber_email}}" placeholder="Email">
+                                    </div>
+                                    
+                                    <input type="hidden" id="amount" name="amount" value="{{$package->fee * 100}}"> {{-- required in kobo --}}
+                                    {{-- <input type="hidden" id="orderID" name="orderID" value="777"> --}}
+                                    {{-- <input type="hidden" name="quantity" value="2"> --}}
+                                    <input type="hidden" name="currency" value="NGN">
+                                     {{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                    <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                                    <input type="hidden" name="callback_url" value="{{config('app.url')}}payment_success" id="">
+
+                                    {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+                        
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+                        
+                                    <p>
+                                        <button class="btn btn-success btn-lg btn-block" type="submit" value="Pay Now!">
+                                            <i class="fa fa-plus-circle fa-lg"></i> Get Started Now
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
                     <div class="col-lg-6 offset-lg-1 order-1 order-lg-2">
                         <div class="sec-image-2 position-relative " id="sec-image-2">
@@ -116,7 +148,7 @@
 
 
         <!-- pricing section -->
-        <section class="section bg-white" id="pricing">
+        <section class="section bg-white d-none" id="pricing">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -257,7 +289,7 @@
         </section>
         <!-- end pricing -->
 
-        <section class="section faq " id="faq">
+        <section class="section faq d-none " id="faq">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
