@@ -9,9 +9,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="title mt-5 mt-lg-0">
-                            Hello, Im {{$user->name}}
+                            Hello, I'm {{$user->name}}
                         </h2>
-                        <p class="f-16 my-4 text-muted">Our mission is to raise a global community of healthy individual through </p>
+                        <p class="f-16 my-4 text-muted">We are on a mission to create a healthy and wealthy global community through health and wealth education.</p>
                       
 
                        
