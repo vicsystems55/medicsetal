@@ -83,8 +83,8 @@
                             </div>
                             <div id="imgcontainer-1">
                                 <div id="inner-2">
-                                    <div class="demo-img">
-                                        <div class="demo-overlay">
+                                    <div class="demo-img d-none">
+                                        <div class="demo-overlay d-none">
     
                                         </div>
                                     </div>
