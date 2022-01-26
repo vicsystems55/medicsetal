@@ -8,9 +8,9 @@
             <div class="home-content">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h2 class="title mt-5 mt-lg-0">
-                            Congratulations, you journey has began
-                        </h2>
+                        <h4 class="title mt-5 mt-lg-0">
+                            Congratulations, your journey has began
+                        </h4>
                         <h4 style="z-index: 999;" class="f-16 my-4 text-muted">Please check your mail for information on how to proceed.</h4>
                         
 
@@ -28,7 +28,7 @@
                             </div>
                             <div id="imgcontainer-1">
                                 <div id="inner-2">
-                                    <div class="demo-img">
+                                    <div class="demo-img d-none">
                                         <div class="demo-overlay">
     
                                         </div>
