@@ -16,10 +16,7 @@ class NotificationController extends Controller
         $notifications = Notification::where('performed_by', $request->user()->id)->latest()->get();
         
         
-        return response()->json([
-            'notifications' => $notifications,
- 
-        ]);
+        return $notifications;
 
     }
 }
