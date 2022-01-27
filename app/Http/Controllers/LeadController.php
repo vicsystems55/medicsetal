@@ -130,7 +130,7 @@ class LeadController extends Controller
                 //throw $th;
 
 
-            // }
+            }
 
 
         $packages = Package::get();
