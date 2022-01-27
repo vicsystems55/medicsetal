@@ -50,6 +50,7 @@ class PackageController extends Controller
     public function deactivate(Request $request)
     {
         # code...
+        
         $package = Package::where('id', $request->id)->udpdate([
             'status' => 'deactivated'
         ]);
@@ -73,18 +74,32 @@ class PackageController extends Controller
     public function details(Request $request)
     {
         # code...
-        $package = Package::where('id', $request->id)->first();
+        $package = Package::where('id', $request->package_id)->first();
 
         return $package;
         
     }
 
-    public function packages()
+    public function packages(Request $request)
     {
         # code...
-        $packages = Package::latest()->get();
+        if ($request->package_id) {
+            # code...
 
-        return $packages;
+                    # code...
+        $package = Package::where('id', $request->package_id)->first();
+
+        return $package;
+
+
+        }else{
+
+            $packages = Package::latest()->get();
+
+            return $packages;
+
+
+        }
         
     }
 }

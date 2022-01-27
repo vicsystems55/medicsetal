@@ -8,10 +8,12 @@
             <div class="home-content">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h4 class="titl mt-5 mt-lg-0">
+                        <h2 class="titl mt-5 mt-lg-0">
                             Congratulations, your journey has began
-                        </h4>
+                        </h2>
                         <h4 style="z-index: 999;" class="f-16 my-4 text-muted">Watch the video below and check your mail for information on how to proceed.</h4>
+
+                        
                         
 
                         

@@ -27,6 +27,12 @@
                     
                                                 <div class=" ">
                                                     <div class="col-lg-7">
+
+                                                        @if ($errors->any())
+                                                        @foreach ($errors->all() as $error)
+                                                            <p class="alert alert-warning">Sorry this email has been used. Try another email.</p>
+                                                        @endforeach
+                                                    @endif
                                                         <form action="{{route('register_lead')}}" method="post" class="subscribe-form">
                                                             @csrf
                                                             <div class="input-group mb-2">
@@ -293,6 +299,8 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
+                                 
+
                                     <form action="{{route('register_lead')}}" method="post" class="subscribe-form">
                                         @csrf
                                         <div class="input-group mb-2">

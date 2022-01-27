@@ -20,7 +20,11 @@ use App\Models\Subscription;
 
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Support\Facades\Mail;
+
+use App\Mail\NewMember;
 
 use App\Mail\SubscriptionSuccessful;
 
@@ -31,32 +35,45 @@ class LeadController extends Controller
     //
     public function register_lead(Request $request)
     {
+        $request->validate([
+            'email' => 'required|string|email|max:255|unique:users',
+            // 'amount' => 'required|numeric|min:99700|between:0,99.99',
+            // 'number_of_accounts' => 'required|numeric|min:1|max:15',
+            // 'file' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             
-
-        $response_token = Http::get('http://aweber.mindigo.co.uk/get-access-token.php');
-
-        // return $response;
-        $response = Http::withHeaders([
-            'User-Agent' => 'AWeber-PHP-code-sample/1.0',
-            'Authorization' => 'Bearer ' .$response_token,
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json',
-            
-        ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers',[
-            'ad_tracking' => 'medics_et_al',
-            
-            'email' => $request->email,
-            'ip_address' => $request->ip(),
-            'last_followup_message_number_sent' => 0,
-            'misc_notes' => 'string',
-            'name' => $request->name,
-            'strict_custom_fields' => true,
-            'tags' => [
-              'slow',
-              'fast',
-              'lightspeed'
-            ]
         ]);
+    
+
+            try {
+                //code...
+
+                $response_token = Http::get('http://aweber.mindigo.co.uk/get-access-token.php');
+
+                // return $response;
+                $response = Http::withHeaders([
+                    'User-Agent' => 'AWeber-PHP-code-sample/1.0',
+                    'Authorization' => 'Bearer ' .$response_token,
+                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json',
+                    
+                ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers',[
+                    'ad_tracking' => 'medics_et_al',
+                    
+                    'email' => $request->email,
+                    'ip_address' => $request->ip(),
+                    'last_followup_message_number_sent' => 0,
+                    'misc_notes' => 'string',
+                    'name' => $request->name,
+                    'strict_custom_fields' => true,
+                    'tags' => [
+                      'slow',
+                      'fast',
+                      'lightspeed'
+                    ]
+                ]);
+            } catch (\Throwable $th) {
+                //throw $th;
+            }
 
         $referrer_data = User::where('username', $request->username)->first();
 
@@ -67,6 +84,23 @@ class LeadController extends Controller
             'lead_email'=> $request->email,
             'lead_phone'=> $request->phone,
         ]);
+            try {
+                //code...
+
+                $regCode = "MED" .rand(11100,999999);
+
+                $new_user = User::create([
+                        'name' => $request->name,
+                        'email' => $request->email,
+                        'username' => $request->email,
+                        'usercode' => $regCode,
+                        'sponsors_id' => $referrer_data->id,
+                        'real_password' => $request->phone,
+                        'password' => Hash::make($request->phone),
+                ]);
+            } catch (\Throwable $th) {
+                //throw $th;
+            }
 
 
         $notification = Notification::create([
@@ -74,6 +108,28 @@ class LeadController extends Controller
             'title' => "New Lead",
             'log' => 'You have a new lead from your landing page!!'
         ]);
+
+        $datax = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone
+        ];
+
+        // try {
+            //code...
+
+            try {
+                //code...
+                Mail::to($request->email)
+                ->send(new NewMember($datax));
+    
+
+
+            } catch (\Throwable $th) {
+                //throw $th;
+
+
+            }
 
 
         $packages = Package::get();

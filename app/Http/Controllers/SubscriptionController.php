@@ -30,7 +30,9 @@ class SubscriptionController extends Controller
 
         try {
             //code...
-            $subscription = Subscription::create([
+            $subscription = Subscription::updateOrCreate([
+                'user_id' => $request->user()->id
+            ],[
                 'user_id' => $request->user()->id,
                 'start_date' => Carbon::now(),
                 'end_date' => $end_date,
@@ -39,33 +41,33 @@ class SubscriptionController extends Controller
                   
             ]);
 
-            $lms_password = $request->user()->usercode .rand(100, 999);
+            // $lms_password = $request->user()->usercode .rand(100, 999);
 
-            try {
+            // try {
                 
-                $responsex = Http::withBasicAuth('admin', 'pureweb')-> post('https://edu.medicsetal.org/wp-json/wp/v2/users', [
-                    'name' => $request->user()->name,
-                    'username' => $request->user()->email,
-                    'first_name' => $request->user()->name,
-                    'last_name' => '',
-                    'email' => $request->user()->email,
+            //     $responsex = Http::withBasicAuth('admin', 'pureweb')-> post('https://edu.medicsetal.org/wp-json/wp/v2/users', [
+            //         'name' => $request->user()->name,
+            //         'username' => $request->user()->email,
+            //         'first_name' => $request->user()->name,
+            //         'last_name' => '',
+            //         'email' => $request->user()->email,
                    
-                    'description' => '',
-                    'nickname' => $request->user()->usercode,
-                    'slug' => $request->user()->usercode,
-                    'roles' => 'subscriber',
-                    'password' => $request->user()->real_password ?? $lms_password,
-                    'locale' => 'en_US',
+            //         'description' => '',
+            //         'nickname' => $request->user()->usercode,
+            //         'slug' => $request->user()->usercode,
+            //         'roles' => 'subscriber',
+            //         'password' => $request->user()->real_password ?? $lms_password,
+            //         'locale' => 'en_US',
                   
-                ]);
+            //     ]);
 
-                // return $responsex;
+            //     // return $responsex;
 
-            } catch (\Throwable $thx) {
-            //     //throw $th;
+            // } catch (\Throwable $thx) {
+            // //     //throw $th;
 
-            //     return $thx;
-            }
+            // //     return $thx;
+            // }
 
             $datax = [
                 'package_name' => $package->name,
