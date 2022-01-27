@@ -119,15 +119,15 @@ class LeadController extends Controller
         // try {
             //code...
 
-            // try {
-                //code...
+            try {
+     
                 Mail::to($request->email)
                 ->send(new NewMember($datax));
     
 
 
-            // } catch (\Throwable $th) {
-            //     //throw $th;
+            } catch (\Throwable $th) {
+                //throw $th;
 
 
             // }
