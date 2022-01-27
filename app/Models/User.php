@@ -53,4 +53,11 @@ class User extends Authenticatable
         
         return $this->hasOne('App\Models\Subscription', 'user_id');
     }
+
+    public function leads()
+    {
+        
+        
+        return $this->hasOne('App\Models\Lead', 'referrer_id');
+    }
 }

@@ -10,16 +10,19 @@ class UserProfileController extends Controller
 {
     //
 
-    public function user_stats()
+    public function user_stats(Request $request)
     {
 
-        $user = User::with('subscription.package')->find(10012);
+        $user = User::with('subscription.package')->with('leads')->find(10002);
 
         
+
+      
         
         return response()->json([
  
             'user_data' => $user,
+            'no_leads' => $user->leads->count()
 
         ]);
     }
