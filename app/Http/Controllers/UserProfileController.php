@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 
+
+use App\Models\Lead;
+
 class UserProfileController extends Controller
 {
     //
@@ -13,18 +16,19 @@ class UserProfileController extends Controller
     public function user_stats(Request $request)
     {
 
+        $user = User::with('subscription.package')->find(10012);
+
+        $leads = Lead::where('referrer_id', 10012)->latest()->get();
+
+
+
         
-
-        $user = User::with('subscription.package')->with('leads')->find(10012);
-
-        
-
-      
         
         return response()->json([
  
             'user_data' => $user,
-            'no_leads' => $user->leads->count()
+
+            'no_leads' => $leads->count()
 
         ]);
     }
