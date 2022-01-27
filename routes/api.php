@@ -67,6 +67,11 @@ Route::post('/create_enumeration', [RTVRSEnumerationController::class, 'create_e
 
 Route::post('/user_stats', [UserProfileController::class, 'user_stats']);
 
+Route::post('/user_profile', [UserProfileController::class, 'update_profile'])->middleware('auth:sanctum');
+
+Route::post('/get_profile', [UserProfileController::class, 'get_profile'])->middleware('auth:sanctum');
+
+
 Route::post('/courses', [CourseController::class, 'courses']);
 
 

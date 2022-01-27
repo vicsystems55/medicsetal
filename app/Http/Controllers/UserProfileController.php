@@ -9,6 +9,8 @@ use App\Models\User;
 
 use App\Models\Lead;
 
+use App\Models\UserProfile;
+
 class UserProfileController extends Controller
 {
     //
@@ -31,5 +33,48 @@ class UserProfileController extends Controller
             'no_leads' => $leads->count()
 
         ]);
+    }
+
+    public function update_profile(Request $request)
+    {
+        # code...
+
+        try {
+            //code...
+
+            $user_profile = UserProfile::updateOrCreate([
+                'user_id' => $request->user()->id,
+            ],[
+                
+                'bio' => $request->bio,
+                'gender' => $request->gender,
+                'nationality' => $request->nationality,
+                'adddress' => $request->address,
+                'phone' => $request->phone,
+                'nok_fullname' => $request->nok_fullname,
+                'nok_address' => $request->nok_address,
+                'nok_relationship' => $request->nok_relationship,
+                'nok_phone' => $request->nok_phone,
+            ]);
+    
+            return $user_profile;
+        } catch (\Throwable $th) {
+            //throw $th;
+
+            return $th;
+        }
+
+
+    }
+
+    public function get_profile(Request $request)
+    {
+        # code...
+
+        // return $request->user()->id;
+
+        $profile = UserProfile::where('user_id', $request->user()->id)->first();
+
+        return $profile;
     }
 }
