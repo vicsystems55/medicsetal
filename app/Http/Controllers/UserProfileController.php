@@ -18,9 +18,9 @@ class UserProfileController extends Controller
     public function user_stats(Request $request)
     {
 
-        $user = User::with('subscription.package')->find(10012);
+        $user = User::with('subscription.package')->find($request->user()->id);
 
-        $leads = Lead::where('referrer_id', 10012)->latest()->get();
+        $leads = Lead::where('referrer_id', $request->user()->id)->latest()->get();
 
 
 
