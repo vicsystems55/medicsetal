@@ -37,6 +37,7 @@ class LeadController extends Controller
     {
         $request->validate([
             'email' => 'required|string|email|max:255|unique:users',
+            
             // 'amount' => 'required|numeric|min:99700|between:0,99.99',
             // 'number_of_accounts' => 'required|numeric|min:1|max:15',
             // 'file' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
@@ -84,7 +85,7 @@ class LeadController extends Controller
             'lead_email'=> $request->email,
             'lead_phone'=> $request->phone,
         ]);
-            try {
+            // try {
                 //code...
 
                 $regCode = "MED" .rand(11100,999999);
@@ -98,9 +99,9 @@ class LeadController extends Controller
                         'real_password' => $request->phone,
                         'password' => Hash::make($request->phone),
                 ]);
-            } catch (\Throwable $th) {
-                //throw $th;
-            }
+            // } catch (\Throwable $th) {
+            //     //throw $th;
+            // }
 
 
         $notification = Notification::create([
@@ -118,18 +119,18 @@ class LeadController extends Controller
         // try {
             //code...
 
-            try {
+            // try {
                 //code...
                 Mail::to($request->email)
                 ->send(new NewMember($datax));
     
 
 
-            } catch (\Throwable $th) {
-                //throw $th;
+            // } catch (\Throwable $th) {
+            //     //throw $th;
 
 
-            }
+            // }
 
 
         $packages = Package::get();
