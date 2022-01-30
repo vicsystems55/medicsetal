@@ -291,13 +291,13 @@
         </section>
         <!-- end pricing -->
 
-        <section class="section faq d-none " id="faq">
+        <section class="section faq  " id="faq">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="title-box text-center">
                             
-                            <h2 class="mb-3">Make Payment</h2>
+                            <h2 class="mb-3">Offline Payments also available</h2>
                             
                         </div>
                     </div>
@@ -310,14 +310,14 @@
                                 <div class="card mt-4">
                                     <a data-bs-toggle="collapse" href="#collapse1" class="faq collapsed">
                                         <div class="card-header p-4" id="heading1">
-                                            <h5 class="mb-0 text-dark">Paystack.</h5>
+                                            <h5 class="mb-0 text-dark">Details.</h5>
                                         </div>
                                     </a>
                                     <div id="collapse1" class="collapse show" aria-labelledby="heading1"
                                         data-parent="#accordionExample">
                                         <div class="card-body pt-1">
 
-                                            <form method="POST" action="{{ route('pay') }}" >
+                                            <form class="d-none" method="POST" action="{{ route('pay') }}" >
                                                 <div class="row" >
                                                     <div class="">
                                                         <div class="form-group">
@@ -349,6 +349,21 @@
                                                 </div>
                                             </form>
 
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Account Name:</td>
+                                                    <th>MEDICS ET AL LIMITED </th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Account Number:</td>
+                                                    <th>0604392917</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bank</td>
+                                                    <th>Guaranty Trust Bank</th>
+                                                </tr>
+                                            </table>
+
                                             
                                             
                                         </div>
@@ -358,7 +373,7 @@
     
                                 
                                 <!-- start 2 -->
-                                <div class="card mt-4">
+                                <div class="card mt-4 d-none">
                                     <a data-bs-toggle="collapse" href="#collapse2" class="faq collapsed">
                                         <div class="card-header p-4" id="heading2">
                                             <h5 class="mb-0 text-dark">Flutterwave</h5>
