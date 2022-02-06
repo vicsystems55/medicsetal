@@ -18,6 +18,8 @@ class UserProfileController extends Controller
     public function user_stats(Request $request)
     {
 
+        return $request->user()->id;
+
         try {
             //code...
 
