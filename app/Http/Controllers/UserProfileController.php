@@ -20,34 +20,34 @@ class UserProfileController extends Controller
 
         return $request->user()->id;
 
-        try {
-            //code...
+        // try {
+        //     //code...
 
             
-        $user = User::with('subscription.package')->find($request->user()->id);
+        // $user = User::with('subscription.package')->find($request->user()->id);
 
-        $leads = Lead::where('referrer_id', $request->user()->id)->latest()->get();
+        // $leads = Lead::where('referrer_id', $request->user()->id)->latest()->get();
 
 
 
         
         
-        return response()->json([
+        // return response()->json([
  
-            'user_data' => $user,
+        //     'user_data' => $user,
 
-            'no_leads' => $leads->count()
+        //     'no_leads' => $leads->count()
 
-        ]);
+        // ]);
 
 
 
-        } catch (\Throwable $th) {
-            //throw $th;
+        // } catch (\Throwable $th) {
+        //     //throw $th;
 
-            return $th;
+        //     return $th;
 
-        }
+        // }
 
     }
 
