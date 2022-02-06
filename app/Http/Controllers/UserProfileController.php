@@ -18,6 +18,10 @@ class UserProfileController extends Controller
     public function user_stats(Request $request)
     {
 
+        try {
+            //code...
+
+            
         $user = User::with('subscription.package')->find($request->user()->id);
 
         $leads = Lead::where('referrer_id', $request->user()->id)->latest()->get();
@@ -33,6 +37,16 @@ class UserProfileController extends Controller
             'no_leads' => $leads->count()
 
         ]);
+
+
+
+        } catch (\Throwable $th) {
+            //throw $th;
+
+            return $th;
+
+        }
+
     }
 
     public function update_profile(Request $request)

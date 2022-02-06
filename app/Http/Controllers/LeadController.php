@@ -43,6 +43,8 @@ class LeadController extends Controller
             // 'file' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             
         ]);
+
+        // dd('promotional');
     
 
             try {
@@ -116,21 +118,22 @@ class LeadController extends Controller
             'phone' => $request->phone
         ];
 
-        // try {
+        //  try {
             //code...
 
-            try {
+            // try {
      
                 Mail::to($request->email)
                 ->send(new NewMember($datax));
     
 
 
-            } catch (\Throwable $th) {
-                //throw $th;
+            //  } catch (\Throwable $th) {
+
+            //  throw $th;
 
 
-            }
+            //  }
 
 
         $packages = Package::get();

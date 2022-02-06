@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- start home section -->
-    <section class="home" id="home">
+    <section class="home pb-0" id="home">
         <div class="container" id="ani-round">
             <div class="home-content">
                 <div class="row align-items-center">
@@ -57,7 +57,7 @@
 
     </section>
 
-    <section class="section " id="features">
+    <section class="section mt--3 " id="features">
         <div class="container ">
 
             @foreach ($packages as $package)

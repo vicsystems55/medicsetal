@@ -71,7 +71,6 @@ Route::post('/user_profile', [UserProfileController::class, 'update_profile'])->
 
 Route::post('/get_profile', [UserProfileController::class, 'get_profile'])->middleware('auth:sanctum');
 
-
 Route::post('/courses', [CourseController::class, 'courses']);
 
 

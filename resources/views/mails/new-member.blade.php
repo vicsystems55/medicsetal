@@ -16,6 +16,8 @@
     Login to your account with the following credentials.
     <br>
     <br>
+    <span><a href="https://affiliate.medicsetal.org/#/login">https://affiliate.medicsetal.org/#/login</a></span>
+    <br>
     <span><b> Email: </b></span> {{$data['email']}} <br>
     <span><b> Temporary  Password: </b></span> {{$data['phone']}}
 </p>
