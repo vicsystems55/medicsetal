@@ -65,7 +65,7 @@ Route::get('/get_leads', [LeadController::class, 'get_leads'])->middleware('auth
 
 Route::post('/create_enumeration', [RTVRSEnumerationController::class, 'create_enumeration']);
 
-Route::post('/user_stats', [UserProfileController::class, 'user_stats']);
+Route::post('/user_stats', [UserProfileController::class, 'user_stats'])->middleware('auth:sanctum');
 
 Route::post('/user_profile', [UserProfileController::class, 'update_profile'])->middleware('auth:sanctum');
 
