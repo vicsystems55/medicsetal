@@ -119,7 +119,7 @@ class LeadController extends Controller
         ];
 
         //  try {
-            //code...
+            // code...
 
             try {
      
@@ -131,6 +131,8 @@ class LeadController extends Controller
              } catch (\Throwable $th) {
 
             //  throw $th;
+
+            return $th;
 
 
              }
@@ -158,6 +160,22 @@ class LeadController extends Controller
         return view('landing_pages.success',[
             'packages' => $packages,
             'subscriber_email' => $request->subscriber??''
+        ]);
+    }
+
+    public function view_packages($subscriber)
+    {
+
+        $packages = Package::get();
+
+        // dd($request->all());
+
+        
+
+
+        return view('landing_pages.view_packages',[
+            'packages' => $packages,
+            'subscriber_email' => $subscriber??''
         ]);
     }
 

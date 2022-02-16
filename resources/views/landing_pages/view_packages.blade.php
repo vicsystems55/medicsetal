@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- start home section -->
-    <section class="home pb-0" id="home">
+    <section class="home pb-0 d-none" id="home">
         <div class="container" id="ani-round">
             <div class="home-content">
                 <div class="row align-items-center">
@@ -13,9 +13,7 @@
                         </h2>
                         <h4 style="z-index: 999;" class="f-16 my-4 text-muted">Watch the video below and check your mail for information on how to proceed.</h4>
 
-                        <div class="card-body pt-1">
-                            <a href="{{route('view.packages', $subscriber_email)}}" class="btn btn-primary float-right">View Packages</a>
-                        </div>
+                        
                         
 
                         
@@ -59,8 +57,18 @@
 
     </section>
 
-    <section class="section mt--3 d-none" id="features">
+    <section class="section mt--3 " id="features">
         <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center">
+                        <h6 class="text-muted fw-normal">Get Your Best Package</h6>
+                        <h2 class="mb-3">Best <span class="text-primary fw-normal">Medics Et Al</span> Packages
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
 
             @foreach ($packages as $package)
 
@@ -293,7 +301,7 @@
         </section>
         <!-- end pricing -->
 
-        <section class="section faq  d-none" id="faq">
+        <section class="section faq  " id="faq">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

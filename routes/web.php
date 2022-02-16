@@ -56,6 +56,8 @@ Route::get('/account_success', [LeadController::class, 'account_success'])->name
 
 Route::post('/register_lead', [LeadController::class, 'register_lead'])->name('register_lead');
 
+Route::get('/view_packages/{subscriber_email}', [LeadController::class, 'view_packages'])->name('view.packages');
+
 
 
 
