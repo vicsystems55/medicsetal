@@ -13,7 +13,7 @@
                         </h2>
                         <p class="f-16 my-4 text-muted">We are on a mission to create a healthy and wealthy global community through health and wealth education.</p>
                       
-
+                        <p class="f-16 my-4 text-muted" >Register below to access the FREE Health Education Training.</p>
                        
 
                             <div class="cta-image position-relative " id="cta-footer">
