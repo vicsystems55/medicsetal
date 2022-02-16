@@ -132,7 +132,7 @@ class LeadController extends Controller
 
             //  throw $th;
 
-            return $th;
+            // return $th;
 
 
              }
