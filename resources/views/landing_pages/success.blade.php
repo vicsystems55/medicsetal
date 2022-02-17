@@ -13,10 +13,7 @@
                         </h2>
                         <h4 style="z-index: 999;" class="f-16 my-4 text-muted">Watch the video below and check your mail for information on how to proceed.</h4>
 
-                        <div class="card-body pt-1">
-                            <a href="{{route('view.packages', $subscriber_email)}}" class="btn btn-primary float-right">View Packages</a>
-                        </div>
-                        
+                                                
 
                         
                     </div>
@@ -57,6 +54,16 @@
             </div>
         </div>
 
+        
+
+    </section>
+
+    <section>
+        <div class="container py-5">
+            <div class="card-body text-center">
+                <a href="{{route('view.packages', $subscriber_email)}}" class="btn btn-primary float-right">View Packages</a>
+            </div>
+        </div>
     </section>
 
     <section class="section mt--3 d-none" id="features">
