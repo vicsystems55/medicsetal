@@ -61,7 +61,7 @@
     <section>
         <div class="container py-5">
             <div class="card-body text-center">
-                <a href="{{route('view.packages', $subscriber_email)}}" class="btn btn-primary float-right">View Packages</a>
+                <a href="{{route('view.packages', $subscriber_email)}}" class="btn btn-primary float-right">Get Started On This Amazing Journey</a>
             </div>
         </div>
     </section>
