@@ -10,7 +10,7 @@ class PackageController extends Controller
 {
     //
 
-    fun
+    
 
     public function create_package(Request $request)
     {
