@@ -86,10 +86,25 @@ class UserProfileController extends Controller
     {
         # code...
 
+
+
         // return $request->user()->id;
 
-        $profile = UserProfile::where('user_id', $request->user()->id)->first();
+        if ($request->user()->role == 'admin') {
+            # code...
 
-        return $profile;
+            $profiles = User::with('profile')->with('subscription.package')->latest()->get();
+
+            return $profiles;
+        }
+        if ($requst->user()->role == 'user') {
+            # code...
+
+            $profile = UserProfile::where('user_id', $request->user()->id)->first();
+
+            return $profile;
+        }
+
+
     }
 }

@@ -60,4 +60,11 @@ class User extends Authenticatable
         
         return $this->hasOne('App\Models\Lead', 'referrer_id');
     }
+
+    public function profile()
+    {
+        
+        
+        return $this->hasOne(UserProfile::class);
+    }
 }
