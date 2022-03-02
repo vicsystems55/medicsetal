@@ -51,6 +51,8 @@ Route::post('/package', [PackageController::class, 'package']);
 
 Route::post('/payment_callback', [SubscriptionController::class, 'register_subscription'])->middleware('auth:sanctum');
 
+Route::post('/admin_payment_callback', [SubscriptionController::class, 'admin_register_subscription'])->middleware('auth:sanctum');
+
 Route::post('/verify_otp', [ApiAuthController::class, 'verify_otp'])->middleware('auth:sanctum');
 
 Route::get('/get_faqs', [FAQController::class, 'get_faqs']);
@@ -72,6 +74,8 @@ Route::post('/user_profile', [UserProfileController::class, 'update_profile'])->
 Route::post('/get_profile', [UserProfileController::class, 'get_profile'])->middleware('auth:sanctum');
 
 Route::post('/courses', [CourseController::class, 'courses']);
+
+
 
 
 
