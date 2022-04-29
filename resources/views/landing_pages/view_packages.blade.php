@@ -420,6 +420,8 @@
 <style>
     input[type="radio"]:checked ~ div {
   box-shadow: 0 0 0 3px orange;
+  width: 123px;
+  height: 100px;
 }
 </style>
 

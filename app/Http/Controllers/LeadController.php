@@ -55,7 +55,7 @@ class LeadController extends Controller
                 // return $response;
                 $response = Http::withHeaders([
                     'User-Agent' => 'AWeber-PHP-code-sample/1.0',
-                    'Authorization' => 'Bearer ' .$response_token,
+                    'Authorization' => 'Bearer ' .trim($response_token, '#!/usr/bin/env php '),
                     'Accept' => 'application/json',
                     'Content-Type' => 'application/json',
                     
@@ -76,6 +76,8 @@ class LeadController extends Controller
                 ]);
             } catch (\Throwable $th) {
                 //throw $th;
+
+                return $th;
             }
 
         $referrer_data = User::where('username', $request->username)->first();
