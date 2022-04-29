@@ -77,7 +77,7 @@ class LeadController extends Controller
             } catch (\Throwable $th) {
                 //throw $th;
 
-                return $th;
+                // return $th;
             }
 
         $referrer_data = User::where('username', $request->username)->first();
