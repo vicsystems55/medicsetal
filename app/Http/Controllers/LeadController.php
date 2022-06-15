@@ -344,13 +344,14 @@ class LeadController extends Controller
                 "lightspeed"
                 ]
             ];
+
             $response = Http::withHeaders([
+                'Accept'=> '*/*',
                 'User-Agent' => 'AWeber-PHP-code-sample/1.0',
                 'Authorization' => 'Bearer '.$generated_token,
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json',
+         
                 
-            ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers',$body);
+            ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers');
 
 
             return $response;
@@ -393,7 +394,7 @@ class LeadController extends Controller
         } catch (\Throwable $th) {
             //throw $th;
 
-            return $th;
+            return $th->getMessage();
         }
 
 
