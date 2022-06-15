@@ -321,9 +321,9 @@ class LeadController extends Controller
                 
             //code...
 
-            $response_token = Http::get('https://aweber.mindigo.co.uk/get-access-token.php');
+            // $response_token = Http::get('https://aweber.mindigo.co.uk/get-access-token.php');
 
-            $generated_token =  trim($response_token, '#!/usr/bin/env php ');
+            // $generated_token =  trim($response_token, '#!/usr/bin/env php ');
 
             // return $generated_token;
 
@@ -332,10 +332,10 @@ class LeadController extends Controller
             $body = [
                 "ad_tracking" => "ebook",
                 "email" => $request->email,
-                "ip_address" => "41.73.1.71",
+                "ip_address" => "89.38.99.172",
                 "last_followup_message_number_sent" => 0,
                 "misc_notes" => "string",
-                "name" => "John Doe",
+                "name" => "Test Kit",
                 "strict_custom_fields" => "true",
                 "update_existing" => "true",
                 "tags" => [
@@ -348,10 +348,10 @@ class LeadController extends Controller
             $response = Http::withHeaders([
                 'Accept'=> '*/*',
                 'User-Agent' => 'AWeber-PHP-code-sample/1.0',
-                'Authorization' => 'Bearer '.$generated_token,
+                'Authorization' => 'Bearer f2IAAIO5hkJO0YnYDAjygzfO95eYuM1o',
          
                 
-            ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers');
+            ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers', $body);
 
 
             return $response;
