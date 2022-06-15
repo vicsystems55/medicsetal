@@ -76,6 +76,9 @@ Route::post('/get_profile', [UserProfileController::class, 'get_profile'])->midd
 Route::post('/courses', [CourseController::class, 'courses']);
 
 
+Route::get('/add_sub', [LeadController::class, 'add_sub']);
+
+
 
 
 

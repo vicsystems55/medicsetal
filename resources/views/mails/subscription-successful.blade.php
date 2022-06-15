@@ -14,7 +14,7 @@
 
 </p>
 
-<p>  Your access to resource videos has been unlocked.</p>
+<p>  Your access to resource videos is now unlocked.</p>
 
 
 

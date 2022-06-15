@@ -48,36 +48,70 @@ class LeadController extends Controller
     
 
             try {
+
+                
                 //code...
 
                 $response_token = Http::get('http://aweber.mindigo.co.uk/get-access-token.php');
 
+                $generated_token =  trim($response_token, '#!/usr/bin/env php ');
+
+                return $generated_token;
+
+                // // return $response;
+                // $response = Http::withHeaders([
+                //     'User-Agent' => 'AWeber-PHP-code-sample/1.0',
+                //     'Authorization' => 'Bearer '.$generated_token,
+                //     'Accept' => 'application/json',
+                //     'Content-Type' => 'application/json',
+                    
+                // ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers',[
+                //     'ad_tracking' => 'medics_et_al',
+                    
+                //     'email' => $request->email,
+                //     'ip_address' => '191.12.233.23',
+                //     'last_followup_message_number_sent' => 0,
+                //     'misc_notes' => 'string',
+                //     'name' => $request->name,
+                //     'strict_custom_fields' => true,
+                    
+                // ]);
+
+
                 // return $response;
-                $response = Http::withHeaders([
-                    'User-Agent' => 'AWeber-PHP-code-sample/1.0',
-                    'Authorization' => 'Bearer ' .trim($response_token, '#!/usr/bin/env php '),
-                    'Accept' => 'application/json',
-                    'Content-Type' => 'application/json',
-                    
-                ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers',[
-                    'ad_tracking' => 'medics_et_al',
-                    
-                    'email' => $request->email,
-                    'ip_address' => $request->ip(),
-                    'last_followup_message_number_sent' => 0,
-                    'misc_notes' => 'string',
-                    'name' => $request->name,
-                    'strict_custom_fields' => true,
-                    'tags' => [
-                      'slow',
-                      'fast',
-                      'lightspeed'
+
+                $body = [
+                    "ad_tracking" => "ebook",
+                    "email" => $request->email,
+                    "ip_address" => "41.73.1.71",
+                    "last_followup_message_number_sent" => 0,
+                    "misc_notes" => "string",
+                    "name" => "John Doe",
+                    "strict_custom_fields" => "true",
+                    "update_existing" => "true",
+                    "tags" => [
+                    "slow",
+                    "fast",
+                    "lightspeed"
                     ]
-                ]);
+                ];
+                  $headers = [
+                      'Content-Type' => 'application/json',
+                      'Accept' => 'application/json',
+                      'User-Agent' => 'AWeber-PHP-code-sample/1.0'
+                  ];
+                  $url = "https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers";
+                  $response = Http::post($url, ['json' => $body, 'headers' => $headers]);
+                //   echo $response->getHeader('Location')[0];
+
+                return $response->json();
+                  
+
+
             } catch (\Throwable $th) {
                 //throw $th;
 
-                // return $th;
+                return dd($th);
             }
 
         $referrer_data = User::where('username', $request->username)->first();
@@ -184,21 +218,19 @@ class LeadController extends Controller
     public function payment_success()
     {
 
-        // $packages = Package::get();
+        $packages = Package::get();
 
-        // $paymentDetails = Paystack::getPaymentData();
+        $paymentDetails = Paystack::getPaymentData();
 
-        // $amount_paid = $paymentDetails['data']['amount'];
+        $amount_paid = $paymentDetails['data']['amount'];
 
-        // $payer_email = $paymentDetails['data']['customer']['email'];
+        $payer_email = $paymentDetails['data']['customer']['email'];
 
-        // $package = Package::where('fee', $amount_paid/100)->first();
+        $package = Package::where('fee', $amount_paid/100)->first();
 
-        // $referrer_data = Lead::where('lead_email', $payer_email)->first();
+        $referrer_data = Lead::where('lead_email', $payer_email)->first();
 
-        // // $referrer_data->referrer->usercode;
 
-        // // dd($paymentDetails); 
 
         // $regCode = "MED" .rand(11100,999999);
 
@@ -213,104 +245,48 @@ class LeadController extends Controller
         //     'password' => Hash::make(uniqid()),
         // ]);
 
+        $user = User::where('email', $payer_email)->first();
 
-        // // $package = Package::find($package->id);
 
-        // $end_date = Carbon::now()->addMonth($package->duration);
+
+
+        $end_date = Carbon::now()->addMonth($package->duration);
+
+
+
+
+        $subscription = Subscription::create([
+            'user_id' => $user->id,
+            'start_date' => Carbon::now(),
+            'end_date' => $end_date,
+            'package_id' => $package->id,
+            'status' => 'active',
+                
+        ]);
+        
+        $datax = [
+            'package_name' => $package->name,
+            'logo' => $package->featured_image,
+            'end_date' => $end_date,
+            'users_name' => $user->name,
+            'lms_password' => $user->real_password,
+            'lms_username' => $user->email
+        ];
 
         // try {
-        //     //code...
-        //     $subscription = Subscription::create([
-        //         'user_id' => $user->id,
-        //         'start_date' => Carbon::now(),
-        //         'end_date' => $end_date,
-        //         'package_id' => $package->id,
-        //         'status' => 'active',
-                  
-        //     ]);
-
-        //     $lms_password = $user->usercode .rand(100, 999);
-
-        //     try {
-                
-        //         $responsex = Http::withBasicAuth('admin', 'pureweb')-> post('https://edu.medicsetal.org/wp-json/wp/v2/users', [
-        //             'name' => $payer_email,
-        //             'username' => $payer_email,
-        //             'first_name' => $payer_email,
-        //             'last_name' => '',
-        //             'email' => $payer_email,
-                   
-        //             'description' => '',
-        //             'nickname' => $user->usercode,
-        //             'slug' => $user->usercode,
-        //             'roles' => 'subscriber',
-        //             'password' => $user->real_password ?? $lms_password,
-        //             'locale' => 'en_US',
-                  
-        //         ]);
-
-        //         // return $responsex;
-
-        //     } catch (\Throwable $thx) {
-        //     //     //throw $th;
-
-        //     //     return $thx;
-        //     }
-
-        //     $datax = [
-        //         'package_name' => $package->name,
-        //         'logo' => $package->featured_image,
-        //         'end_date' => $end_date,
-        //         'users_name' => $user->name,
-        //         'lms_password' => $user->real_password,
-        //         'lms_username' => $user->email
-        //     ];
-
-    
-        //     // try {
-        //         //code...
-    
-        //         try {
-        //             //code...
-        //             Mail::to($user->email)
-        //             ->send(new SubscriptionSuccessful($datax));
-        
-
-        //         } catch (\Throwable $th) {
-        //             //throw $th;
-
-        //             return $th;
-    
-    
-        //         }
-    
-    
-        //     return response()->json([
-        //         'subscription' => $subscription,
-            
-        //     ]);
+            //code...
+            Mail::to($user->email)
+            ->send(new SubscriptionSuccessful($datax));
 
 
         // } catch (\Throwable $th) {
-        //     //throw $th;
+          
 
-        //     // return $th;
 
-        //     return redirect('/account_success');
         // }
-
-
         return redirect('/account_success');
+        
 
-
-
-
-      
-
-
-        // return view('landing_pages.success_paid',[
-        //     'packages' => $packages
-        // ]);
     }
 
     public function account_success()
@@ -334,5 +310,92 @@ class LeadController extends Controller
             'leads' => $leads,
  
         ]);
+    }
+
+
+    public function add_sub(Request $request)
+    {
+        # code...
+        try {
+
+                
+            //code...
+
+            $response_token = Http::get('https://aweber.mindigo.co.uk/get-access-token.php');
+
+            $generated_token =  trim($response_token, '#!/usr/bin/env php ');
+
+            // return $generated_token;
+
+            // // return $response;
+
+            $body = [
+                "ad_tracking" => "ebook",
+                "email" => $request->email,
+                "ip_address" => "41.73.1.71",
+                "last_followup_message_number_sent" => 0,
+                "misc_notes" => "string",
+                "name" => "John Doe",
+                "strict_custom_fields" => "true",
+                "update_existing" => "true",
+                "tags" => [
+                "slow",
+                "fast",
+                "lightspeed"
+                ]
+            ];
+            $response = Http::withHeaders([
+                'User-Agent' => 'AWeber-PHP-code-sample/1.0',
+                'Authorization' => 'Bearer '.$generated_token,
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                
+            ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers',$body);
+
+
+            return $response;
+
+            // $body = [
+            //     "ad_tracking" => "ebook",
+            //     "email" => $request->email,
+            //     "ip_address" => "41.73.1.71",
+            //     "last_followup_message_number_sent" => 0,
+            //     "misc_notes" => "string",
+            //     "name" => "From Api",
+            //     "strict_custom_fields" => "true",
+            //     "update_existing" => "true",
+            //     "tags" => [
+            //     "slow",
+            //     "fast",
+            //     "lightspeed"
+            //     ]
+            // ];
+            //   $headers = [
+            //       'Content-Type' => 'application/json',
+            //       'Accept' => 'application/json',
+            //       'User-Agent' => 'AWeber-PHP-code-sample/1.0',
+            //       'Authorization' => 'Bearer '.$generated_token,
+            //   ];
+            //   $url = "http://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers";
+            //   $response = Http::withHeaders([
+            //         'User-Agent' => 'AWeber-PHP-code-sample/1.0',
+            //         'Authorization' => 'Bearer '.$generated_token,
+            //         'Accept' => 'application/json',
+            //         'Content-Type' => 'application/json',
+                    
+            //     ])->post($url, ['json' => $body]);
+            //   echo $response->getHeader('Location')[0];
+
+            // return $response;
+              
+
+
+        } catch (\Throwable $th) {
+            //throw $th;
+
+            return $th;
+        }
+
+
     }
 }
