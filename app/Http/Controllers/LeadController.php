@@ -44,49 +44,29 @@ class LeadController extends Controller
             
         ]);
 
-        // dd('promotional');
-    
 
             try {
 
-                
-                //code...
 
-                $response_token = Http::get('http://aweber.mindigo.co.uk/get-access-token.php');
-
-                $generated_token =  trim($response_token, '#!/usr/bin/env php ');
-
-                return $generated_token;
-
-                // // return $response;
-                // $response = Http::withHeaders([
-                //     'User-Agent' => 'AWeber-PHP-code-sample/1.0',
-                //     'Authorization' => 'Bearer '.$generated_token,
-                //     'Accept' => 'application/json',
-                //     'Content-Type' => 'application/json',
-                    
-                // ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers',[
-                //     'ad_tracking' => 'medics_et_al',
-                    
-                //     'email' => $request->email,
-                //     'ip_address' => '191.12.233.23',
-                //     'last_followup_message_number_sent' => 0,
-                //     'misc_notes' => 'string',
-                //     'name' => $request->name,
-                //     'strict_custom_fields' => true,
-                    
-                // ]);
-
-
-                // return $response;
-
+                $response_token = Http::
+                withBasicAuth(
+                    '40PAJBQz3R51dDFgJqGytGJ4tDc3lwtQ', 
+                    'JtnORAa4aLSmdeqfJR71G4iwrHPPpLAe')
+                    ->post('https://auth.aweber.com/oauth2/token',[
+                    'grant_type' => 'refresh_token',
+                    'refresh_token' => 'chVvPsUw9YvIrVYAc7skLPMDSZnSLHv7',
+                    'redirect_uri' => 'urn:ietf:wg:oauth:2.0:oob',
+                ]);
+    
+    
+    
                 $body = [
-                    "ad_tracking" => "ebook",
+                    "ad_tracking" => "medics",
                     "email" => $request->email,
-                    "ip_address" => "41.73.1.71",
+                    "ip_address" => "89.38.99.172",
                     "last_followup_message_number_sent" => 0,
                     "misc_notes" => "string",
-                    "name" => "John Doe",
+                    "name" => $request->name,
                     "strict_custom_fields" => "true",
                     "update_existing" => "true",
                     "tags" => [
@@ -95,23 +75,25 @@ class LeadController extends Controller
                     "lightspeed"
                     ]
                 ];
-                  $headers = [
-                      'Content-Type' => 'application/json',
-                      'Accept' => 'application/json',
-                      'User-Agent' => 'AWeber-PHP-code-sample/1.0'
-                  ];
-                  $url = "https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers";
-                  $response = Http::post($url, ['json' => $body, 'headers' => $headers]);
-                //   echo $response->getHeader('Location')[0];
+    
+                $response = Http::withHeaders([
+                    'Accept'=> '*/*',
+                    'User-Agent' => 'AWeber-PHP-code-sample/1.0',
+                    'Authorization' => 'Bearer '. $response_token['access_token'],
+             
+                    
+                ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers', $body);
+    
+    
+                // return $response;
 
-                return $response->json();
-                  
+                
 
 
             } catch (\Throwable $th) {
                 //throw $th;
 
-                return dd($th);
+                return $th;
             }
 
         $referrer_data = User::where('username', $request->username)->first();
@@ -316,18 +298,24 @@ class LeadController extends Controller
     public function add_sub(Request $request)
     {
         # code...
+
+
         try {
 
                 
             //code...
 
-            // $response_token = Http::get('https://aweber.mindigo.co.uk/get-access-token.php');
+            $response_token = Http::
+            withBasicAuth(
+                '40PAJBQz3R51dDFgJqGytGJ4tDc3lwtQ', 
+                'JtnORAa4aLSmdeqfJR71G4iwrHPPpLAe')
+                ->post('https://auth.aweber.com/oauth2/token',[
+                'grant_type' => 'refresh_token',
+                'refresh_token' => 'chVvPsUw9YvIrVYAc7skLPMDSZnSLHv7',
+                'redirect_uri' => 'urn:ietf:wg:oauth:2.0:oob',
+            ]);
 
-            // $generated_token =  trim($response_token, '#!/usr/bin/env php ');
 
-            // return $generated_token;
-
-            // // return $response;
 
             $body = [
                 "ad_tracking" => "ebook",
@@ -335,7 +323,7 @@ class LeadController extends Controller
                 "ip_address" => "89.38.99.172",
                 "last_followup_message_number_sent" => 0,
                 "misc_notes" => "string",
-                "name" => "Test Kit",
+                "name" => "Adams CEO",
                 "strict_custom_fields" => "true",
                 "update_existing" => "true",
                 "tags" => [
@@ -348,7 +336,7 @@ class LeadController extends Controller
             $response = Http::withHeaders([
                 'Accept'=> '*/*',
                 'User-Agent' => 'AWeber-PHP-code-sample/1.0',
-                'Authorization' => 'Bearer f2IAAIO5hkJO0YnYDAjygzfO95eYuM1o',
+                'Authorization' => 'Bearer '. $response_token['access_token'],
          
                 
             ])->post('https://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers', $body);
@@ -356,38 +344,6 @@ class LeadController extends Controller
 
             return $response;
 
-            // $body = [
-            //     "ad_tracking" => "ebook",
-            //     "email" => $request->email,
-            //     "ip_address" => "41.73.1.71",
-            //     "last_followup_message_number_sent" => 0,
-            //     "misc_notes" => "string",
-            //     "name" => "From Api",
-            //     "strict_custom_fields" => "true",
-            //     "update_existing" => "true",
-            //     "tags" => [
-            //     "slow",
-            //     "fast",
-            //     "lightspeed"
-            //     ]
-            // ];
-            //   $headers = [
-            //       'Content-Type' => 'application/json',
-            //       'Accept' => 'application/json',
-            //       'User-Agent' => 'AWeber-PHP-code-sample/1.0',
-            //       'Authorization' => 'Bearer '.$generated_token,
-            //   ];
-            //   $url = "http://api.aweber.com/1.0/accounts/1620042/lists/6190669/subscribers";
-            //   $response = Http::withHeaders([
-            //         'User-Agent' => 'AWeber-PHP-code-sample/1.0',
-            //         'Authorization' => 'Bearer '.$generated_token,
-            //         'Accept' => 'application/json',
-            //         'Content-Type' => 'application/json',
-                    
-            //     ])->post($url, ['json' => $body]);
-            //   echo $response->getHeader('Location')[0];
-
-            // return $response;
               
 
 
