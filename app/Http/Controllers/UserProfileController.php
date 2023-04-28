@@ -17,22 +17,22 @@ class UserProfileController extends Controller
 
     public function user_stats(Request $request)
     {
-        
+
 
         try {
             //code...
 
-            
+
                 $user = User::with('subscription.package')->find($request->user()->id);
 
                 $leads = Lead::where('referrer_id', $request->user()->id)->latest()->get();
 
 
 
-                
-                
+
+
                 return response()->json([
-        
+
                     'user_data' => $user,
 
                     'no_leads' => $leads->count()
@@ -60,7 +60,7 @@ class UserProfileController extends Controller
             $user_profile = UserProfile::updateOrCreate([
                 'user_id' => $request->user()->id,
             ],[
-                
+
                 'bio' => $request->bio,
                 'gender' => $request->gender,
                 'nationality' => $request->nationality,
@@ -71,7 +71,7 @@ class UserProfileController extends Controller
                 'nok_relationship' => $request->nok_relationship,
                 'nok_phone' => $request->nok_phone,
             ]);
-    
+
             return $user_profile;
         } catch (\Throwable $th) {
             //throw $th;
@@ -97,10 +97,10 @@ class UserProfileController extends Controller
 
             return $profiles;
         }
-        if ($requst->user()->role == 'user') {
+        if ($request->user()->role == 'user') {
             # code...
 
-            $profile = UserProfile::where('user_id', $request->user()->id)->first();
+            $profile = UserProfile::with('user')->where('user_id', $request->user()->id)->first();
 
             return $profile;
         }

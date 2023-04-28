@@ -75,6 +75,8 @@ Route::post('/get_profile', [UserProfileController::class, 'get_profile'])->midd
 
 Route::post('/courses', [CourseController::class, 'courses']);
 
+Route::get('/coursesx', [CourseController::class, 'coursesx'])->middleware('auth:sanctum');
+
 
 Route::get('/add_sub', [LeadController::class, 'add_sub']);
 
