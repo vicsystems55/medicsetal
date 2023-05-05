@@ -84,9 +84,6 @@ class CourseController extends Controller
         $userSub = Subscription::where('user_id', $request->user()->id)->first();
 
 
-
-
-
         $data = compact([
             'userSub',
             'bronzeCourses',

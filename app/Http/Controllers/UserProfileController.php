@@ -93,9 +93,27 @@ class UserProfileController extends Controller
         if ($request->user()->role == 'admin') {
             # code...
 
-            $profiles = User::with('profile')->with('subscription.package')->latest()->get();
+            if ($request->has('key')) {
+                # code...
 
-            return $profiles;
+                $profiles = User::where('name', 'LIKE', '%'.$request->key.'%')
+                ->where('email', 'LIKE', '%'.$request->key.'%')
+                ->with('profile')
+                ->with('subscription.package')
+                ->latest()->get();
+
+                return $profiles;
+
+
+            }else{
+
+                $profiles = User::with('profile')->with('subscription.package')->latest()->get();
+
+                return $profiles;
+
+            }
+
+
         }
         if ($request->user()->role == 'user') {
             # code...
@@ -104,6 +122,7 @@ class UserProfileController extends Controller
 
             return $profile;
         }
+
 
 
     }
