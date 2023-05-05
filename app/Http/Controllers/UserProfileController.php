@@ -97,7 +97,7 @@ class UserProfileController extends Controller
                 # code...
 
                 $profiles = User::where('name', 'LIKE', '%'.$request->key.'%')
-                ->where('email', 'LIKE', '%'.$request->key.'%')
+                ->orWhere('email', 'LIKE', '%'.$request->key.'%')
                 ->with('profile')
                 ->with('subscription.package')
                 ->latest()->get();
